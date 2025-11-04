@@ -1,3 +1,4 @@
+'use client';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { TableOfContents } from './TableOfContents';
 import { ProsCons } from './ProsCons';
