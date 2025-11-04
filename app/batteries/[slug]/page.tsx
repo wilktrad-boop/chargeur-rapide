@@ -8,11 +8,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+
 type Params = { params: { slug: string } };
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.filter(p => p.category === 'batteries').map((post) => ({ slug: post.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -41,7 +43,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Params) {
   const post = getPostBySlug(params.slug);
-  if (!post || post.category !== 'batteries') return notFound();
+  if (!post) return notFound();
 
   const mdxSource = await serializePost(post);
   const headings = extractHeadings(post.content);
@@ -62,9 +64,9 @@ export default async function ArticlePage({ params }: Params) {
                 <span className="mx-2">/</span>
                 <span className="text-slate-600">{post.title}</span>
               </nav>
-
+              
               <h1 className="text-3xl font-semibold text-textStrong">{post.title}</h1>
-
+              
               <div className="mt-4 flex items-center gap-4 text-sm text-slate-600">
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString('fr-FR')}
@@ -106,7 +108,7 @@ export default async function ArticlePage({ params }: Params) {
                 <h3 className="mb-3 font-semibold text-textStrong">Auteur</h3>
                 <p className="text-sm text-slate-700">{post.author}</p>
               </div>
-
+              
               {post.tags.length > 0 && (
                 <div className="mt-4 rounded-2xl border border-border bg-white p-4">
                   <h3 className="mb-3 font-semibold text-textStrong">Tags</h3>
@@ -130,3 +132,5 @@ export default async function ArticlePage({ params }: Params) {
     </>
   );
 }
+
+

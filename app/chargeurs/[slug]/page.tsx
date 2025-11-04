@@ -8,11 +8,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+
 type Params = { params: { slug: string } };
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
