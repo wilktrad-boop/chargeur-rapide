@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargeur-Rapide – média indépendant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        primaryHover: '#0284C7',
+                        accent: '#22C55E',
+                        textMain: '#1F2937',
+                        textStrong: '#0F172A',
+                        bg: '#FFFFFF',
+                        bgSubtle: '#F8FAFC',
+                        border: '#E5E7EB',
+                    },
+                    borderRadius: {
+                        '2xl': '1rem'
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(15, 23, 42, 0.06)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #0EA5E9, 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-bg text-textMain antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-border bg-white/80 backdrop-blur">
+        <div class="mx-auto max-w-6xl px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-2 font-semibold text-textStrong focus-ring">
+                    <span class="inline-block rounded-lg bg-primary px-2 py-1 text-white">CR</span>
+                    <span>Chargeur-Rapide</span>
+                </a>
+                <nav class="hidden gap-6 md:flex">
+                    <a href="/chargeurs" class="text-sm hover:text-primary focus-ring">Chargeurs</a>
+                    <a href="/batteries" class="text-sm hover:text-primary focus-ring">Batteries</a>
+                    <a href="/mobilite" class="text-sm hover:text-primary focus-ring">Mobilité</a>
+                    <a href="/energie" class="text-sm hover:text-primary focus-ring">Énergie</a>
+                    <a href="/guides" class="text-sm hover:text-primary focus-ring">Guides</a>
+                    <a href="/a-propos" class="text-sm hover:text-primary focus-ring">À propos</a>
+                    <a href="/contact" class="text-sm hover:text-primary focus-ring">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-6xl px-4">
+        <!-- Hero -->
+        <section class="my-10 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 p-8 shadow-soft">
+            <h1 class="text-3xl font-semibold text-textStrong">Chargeur‑Rapide</h1>
+            <p class="mt-3 max-w-2xl text-slate-700">Média indépendant sur la charge, l'énergie mobile et la mobilité durable. Guides, comparatifs et explications techniques.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/guides" class="rounded-2xl bg-primary px-4 py-2 text-white hover:bg-primaryHover">Guides</a>
+                <a href="/chargeurs" class="rounded-2xl border border-primary px-4 py-2 text-primary hover:bg-primary/10">Chargeurs</a>
+            </div>
+        </section>
+
+        <!-- Rubriques -->
+        <section class="grid gap-6 md:grid-cols-3">
+            <a href="/chargeurs" class="rounded-2xl border border-border p-6 hover:shadow-soft focus-ring">
+                <div class="text-lg font-semibold text-textStrong">Chargeurs</div>
+                <div class="mt-1 text-sm text-slate-600">USB‑C, PD, PPS, câbles.</div>
+            </a>
+            <a href="/batteries" class="rounded-2xl border border-border p-6 hover:shadow-soft focus-ring">
+                <div class="text-lg font-semibold text-textStrong">Batteries</div>
+                <div class="mt-1 text-sm text-slate-600">Externes, stations, solaire.</div>
+            </a>
+            <a href="/mobilite" class="rounded-2xl border border-border p-6 hover:shadow-soft focus-ring">
+                <div class="text-lg font-semibold text-textStrong">Mobilité</div>
+                <div class="mt-1 text-sm text-slate-600">Trottinettes, vélos, bornes.</div>
+            </a>
+            <a href="/energie" class="rounded-2xl border border-border p-6 hover:shadow-soft focus-ring">
+                <div class="text-lg font-semibold text-textStrong">Énergie</div>
+                <div class="mt-1 text-sm text-slate-600">GaN, solaire, efficacité.</div>
+            </a>
+            <a href="/guides" class="rounded-2xl border border-border p-6 hover:shadow-soft focus-ring">
+                <div class="text-lg font-semibold text-textStrong">Guides</div>
+                <div class="mt-1 text-sm text-slate-600">Méthodes et bonnes pratiques.</div>
+            </a>
+        </section>
+
+        <!-- Derniers articles -->
+        <section class="my-12">
+            <div class="mb-4 flex items-center justify-between">
+                <h2 class="text-2xl font-semibold text-textStrong">Derniers articles</h2>
+                <a href="/guides" class="text-sm text-primary hover:text-primaryHover">Tous les guides →</a>
+            </div>
+            <ul class="grid gap-6 md:grid-cols-3">
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <h3 class="text-base font-semibold">
+                        <a href="/chargeurs/chargeur-usb-c-65w" class="hover:text-primary">Chargeur USB-C 65 W : comment choisir ?</a>
+                    </h3>
+                    <p class="mt-2 line-clamp-3 text-sm text-slate-700">Comparatif, critères techniques (puissance, GaN, PPS), compatibilités et recommandations.</p>
+                    <div class="mt-3 text-xs text-slate-500">28/10/2025</div>
+                </li>
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <h3 class="text-base font-semibold">
+                        <a href="#" class="hover:text-primary">Article exemple 2</a>
+                    </h3>
+                    <p class="mt-2 line-clamp-3 text-sm text-slate-700">Description de l'article exemple avec du contenu pour tester l'affichage.</p>
+                    <div class="mt-3 text-xs text-slate-500">27/10/2025</div>
+                </li>
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <h3 class="text-base font-semibold">
+                        <a href="#" class="hover:text-primary">Article exemple 3</a>
+                    </h3>
+                    <p class="mt-2 line-clamp-3 text-sm text-slate-700">Autre exemple d'article pour voir le rendu de la grille.</p>
+                    <div class="mt-3 text-xs text-slate-500">26/10/2025</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Guides populaires -->
+        <section class="my-12">
+            <h2 class="mb-4 text-2xl font-semibold text-textStrong">Guides populaires</h2>
+            <ul class="grid gap-3 md:grid-cols-2">
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <a href="#" class="font-medium hover:text-primary">Choisir un chargeur rapide</a>
+                    <div class="mt-1 text-sm text-slate-600">Guide complet pour bien choisir son chargeur.</div>
+                </li>
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <a href="#" class="font-medium hover:text-primary">30 W vs 65 W vs 100 W</a>
+                    <div class="mt-1 text-sm text-slate-600">Comparaison des puissances de charge.</div>
+                </li>
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <a href="#" class="font-medium hover:text-primary">Erreurs avec les batteries</a>
+                    <div class="mt-1 text-sm text-slate-600">Les pièges à éviter avec les batteries externes.</div>
+                </li>
+                <li class="rounded-2xl border border-border p-4 hover:shadow-soft">
+                    <a href="#" class="font-medium hover:text-primary">Charge sans fil vs filaire</a>
+                    <div class="mt-1 text-sm text-slate-600">Avantages et inconvénients de chaque méthode.</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Média indépendant -->
+        <section class="my-16 rounded-2xl border border-border p-6">
+            <h2 class="text-2xl font-semibold text-textStrong">Média indépendant</h2>
+            <p class="mt-2 text-slate-700">Aucune vente, aucun partenariat d'affiliation. Objectif : des informations techniques fiables et pérennes.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-border bg-bgSubtle">
+        <div class="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-4">
+            <div>
+                <div class="mb-3 font-semibold text-textStrong">Rubriques</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/chargeurs" class="hover:text-primary">Chargeurs</a></li>
+                    <li><a href="/batteries" class="hover:text-primary">Batteries</a></li>
+                    <li><a href="/mobilite" class="hover:text-primary">Mobilité</a></li>
+                    <li><a href="/energie" class="hover:text-primary">Énergie</a></li>
+                    <li><a href="/guides" class="hover:text-primary">Guides</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="mb-3 font-semibold text-textStrong">Guides populaires</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/guides/choisir-chargeur-rapide" class="hover:text-primary">Choisir un chargeur rapide</a></li>
+                    <li><a href="/guides/charge-30w-65w-100w" class="hover:text-primary">30 W vs 65 W vs 100 W</a></li>
+                    <li><a href="/guides/erreurs-batteries" class="hover:text-primary">Erreurs avec les batteries</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="mb-3 font-semibold text-textStrong">À propos</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/a-propos" class="hover:text-primary">Le média</a></li>
+                    <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="mb-3 font-semibold text-textStrong">Newsletter</div>
+                <p class="text-sm text-slate-600 mb-3">Recevez nos guides. Pas de spam.</p>
+                <form class="flex gap-2">
+                    <input type="email" class="w-full rounded-2xl border border-border bg-white px-4 py-2" placeholder="email@exemple.fr" />
+                    <button type="submit" class="rounded-2xl bg-primary px-4 py-2 text-white hover:bg-primaryHover">OK</button>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-border py-4 text-center text-xs text-slate-500">© 2025 Chargeur-Rapide. Média indépendant.</div>
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: ui-sans-serif;
+  --font-newsreader: ui-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-bg text-textMain antialiased;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+.prose {
+  @apply prose-slate max-w-none prose-headings:text-textStrong prose-a:text-primary hover:prose-a:text-primaryHover;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+}
+
+
+
