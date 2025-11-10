@@ -10,7 +10,7 @@ export default function AboutPage() {
         
         <div className="prose prose-lg mt-6">
           <p>
-            <strong>Chargeur-Rapide</strong> est un média français indépendant dédié à la charge, 
+            <strong>Chargeur-Rapide</strong> est un média français dédié à la charge,
             l'énergie mobile et la mobilité durable.
           </p>
           
@@ -21,11 +21,11 @@ export default function AboutPage() {
             des informations fiables et pérennes.
           </p>
           
-          <h2>Indépendance éditoriale</h2>
+          <h2>Notre approche</h2>
           <p>
-            <strong>Ce site ne vend aucun produit.</strong> Nous sommes un média d'information 
-            indépendant, sans partenariat commercial ou affiliation. Nos recommandations 
-            sont basées uniquement sur l'analyse technique.
+            Nos recommandations sont basées sur l'analyse technique et la qualité des produits.
+            Nous nous efforçons de vous fournir des informations objectives pour vous aider
+            à faire les meilleurs choix.
           </p>
           
           <h2>Contenu</h2>
@@ -50,6 +50,8 @@ export default function AboutPage() {
     </>
   );
 }
+
+
 
 
 

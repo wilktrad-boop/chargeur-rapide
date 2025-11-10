@@ -34,17 +34,17 @@ export default function HomePage() {
       <Header />
       <main className="mx-auto max-w-6xl px-4">
         {/* Hero */}
-        <section className="my-10 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 shadow-soft overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8">
-              <h1 className="text-3xl font-semibold text-textStrong">Chargeur‑Rapide</h1>
-              <p className="mt-3 text-slate-700">Média indépendant sur la charge, l'énergie mobile et la mobilité durable. Guides, comparatifs et explications techniques.</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/guides" className="rounded-2xl bg-primary px-4 py-2 text-white hover:bg-primaryHover">Guides</Link>
-                <Link href="/chargeurs" className="rounded-2xl border border-primary px-4 py-2 text-primary hover:bg-primary/10">Chargeurs</Link>
+        <section className="my-10 rounded-2xl bg-gradient-to-br from-primary via-blue-500 to-accent shadow-soft overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0 items-center">
+            <div className="p-12 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold">Chargeur‑Rapide</h1>
+              <p className="mt-4 text-lg text-white/95">Média sur la charge, l'énergie mobile et la mobilité durable. Guides, comparatifs et explications techniques.</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/guides" className="rounded-2xl bg-white px-6 py-3 text-primary font-semibold hover:bg-white/90 transition-colors shadow-lg">Guides</Link>
+                <Link href="/chargeurs" className="rounded-2xl border-2 border-white px-6 py-3 text-white font-semibold hover:bg-white/10 transition-colors">Chargeurs</Link>
               </div>
             </div>
-            <div className="relative h-64 md:h-full min-h-[300px]">
+            <div className="relative h-80 md:h-full min-h-[400px]">
               <Image
                 src="/images/charging-phone-4874592_1280.jpg"
                 alt="Chargement de téléphone"
@@ -147,20 +147,20 @@ export default function HomePage() {
           </ul>
         </section>
 
-        {/* Média indépendant */}
+        {/* À propos */}
         <section className="my-16 rounded-2xl border border-border overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-64 md:h-auto min-h-[250px]">
               <Image
                 src="/images/iphone-2618080_1280.jpg"
-                alt="Média indépendant"
+                alt="À propos de Chargeur-Rapide"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="p-8 flex flex-col justify-center">
-              <h2 className="text-2xl font-semibold text-textStrong">Média indépendant</h2>
-              <p className="mt-3 text-slate-700">Aucune vente, aucun partenariat d'affiliation. Objectif : des informations techniques fiables et pérennes.</p>
+              <h2 className="text-2xl font-semibold text-textStrong">Notre mission</h2>
+              <p className="mt-3 text-slate-700">Vous fournir des informations techniques fiables et pérennes sur la charge et la mobilité électrique.</p>
             </div>
           </div>
         </section>

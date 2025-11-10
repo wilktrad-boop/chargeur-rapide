@@ -38,7 +38,7 @@ export function Footer() {
           </form>
         </div>
       </div>
-      <div className="border-t border-border py-4 text-center text-xs text-slate-500">© {new Date().getFullYear()} {site.name}. Média indépendant.</div>
+      <div className="border-t border-border py-4 text-center text-xs text-slate-500">© {new Date().getFullYear()} {site.name}.</div>
     </footer>
   );
 }

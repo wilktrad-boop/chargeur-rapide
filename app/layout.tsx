@@ -9,7 +9,7 @@ const newsreader = Newsreader({ subsets: ['latin'], variable: '--font-newsreader
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} – média indépendant`,
+    default: site.name,
     template: `%s – ${site.name}`
   },
   description: site.description,
