@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { site } from '@/config/site';
 import { useState } from 'react';
 import clsx from 'clsx';
@@ -11,7 +12,14 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-semibold text-textStrong focus-ring">
-            <span className="inline-block rounded-lg bg-primary px-2 py-1 text-white">CR</span>
+            <Image
+              src="/images/logo_site_chargeur.png"
+              alt="Chargeur-Rapide"
+              width={40}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
             <span>Chargeur-Rapide</span>
           </Link>
           <nav className="hidden gap-6 md:flex" aria-label="Navigation principale">
