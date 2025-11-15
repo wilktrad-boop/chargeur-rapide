@@ -53,8 +53,8 @@ export default async function ArticlePage({ params }: Params) {
     <>
       <Header />
       <main className="mx-auto max-w-6xl px-4">
-        <div className="grid gap-8 lg:grid-cols-4">
-          <article className="lg:col-span-3">
+        <div className="grid gap-8">
+          <article>
             <div className="mb-8">
               <nav className="mb-4 text-sm">
                 <Link href="/" className="text-primary hover:text-primaryHover">Accueil</Link>
@@ -106,31 +106,6 @@ export default async function ArticlePage({ params }: Params) {
 
             <MDXContent source={mdxSource} />
           </article>
-
-          <aside className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="rounded-2xl border border-border bg-white p-4">
-                <h3 className="mb-3 font-semibold text-textStrong">Auteur</h3>
-                <p className="text-sm text-slate-700">{post.author}</p>
-              </div>
-              
-              {post.tags.length > 0 && (
-                <div className="mt-4 rounded-2xl border border-border bg-white p-4">
-                  <h3 className="mb-3 font-semibold text-textStrong">Tags</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-lg bg-bgSubtle px-2 py-1 text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </aside>
         </div>
       </main>
       <Footer />
