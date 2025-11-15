@@ -123,6 +123,7 @@ export default function HomePage() {
               'erreurs-batteries',
               'charge-sans-fil-vs-filaire',
               'borne-recharge-domicile',
+              'fonctionnement-chargeur-rapide',
             ].map((slug, index) => {
               const g = guides.find((x) => x.slug === slug) || posts.find((x) => x.slug === slug);
               return g ? (

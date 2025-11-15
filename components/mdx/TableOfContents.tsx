@@ -10,9 +10,10 @@ interface Heading {
 
 interface TableOfContentsProps {
   headings: Heading[];
+  variant?: 'inline' | 'sidebar';
 }
 
-export function TableOfContents({ headings }: TableOfContentsProps) {
+export function TableOfContents({ headings, variant = 'sidebar' }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -37,8 +38,13 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
 
   if (headings.length === 0) return null;
 
+  const containerClasses =
+    variant === 'inline'
+      ? 'mb-8'
+      : 'sticky top-24 hidden lg:block';
+
   return (
-    <nav className="sticky top-24 hidden lg:block" aria-label="Table des matières">
+    <nav className={containerClasses} aria-label="Table des matières">
       <div className="rounded-2xl border border-border bg-white p-4 shadow-soft">
         <h3 className="mb-3 font-semibold text-textStrong">Sommaire</h3>
         <ul className="space-y-1 text-sm">
@@ -64,6 +70,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
     </nav>
   );
 }
+
 
 
 

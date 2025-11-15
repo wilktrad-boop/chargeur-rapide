@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MDXContent } from '@/components/mdx/MDXContent';
+import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { getPostBySlug, getAllPosts } from '@/lib/mdx';
 import { serializePost, extractHeadings } from '@/lib/mdx-render';
 import { notFound } from 'next/navigation';
@@ -99,7 +100,11 @@ export default async function ArticlePage({ params }: Params) {
               )}
             </div>
 
-            <MDXContent source={mdxSource} headings={headings} />
+            {headings.length > 0 && (
+              <TableOfContents headings={headings} variant="inline" />
+            )}
+
+            <MDXContent source={mdxSource} />
           </article>
 
           <aside className="lg:col-span-1">
