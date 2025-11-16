@@ -3,6 +3,13 @@ import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts } from '@/lib/mdx';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function HomePage() {
   const posts = getAllPosts()
@@ -13,12 +20,12 @@ export default function HomePage() {
 
   // Images pour les articles - rotation pour avoir de la variété
   const articleImages = [
-    '/images/charging-phone-4874592_1280.jpg',
     '/images/convenient-charger-8062070_1280.jpg',
     '/images/smartphone-2568602_1280.jpg',
     '/images/two-pin-3509490_1280.jpg',
-    '/images/iphone-2618080_1280.jpg',
     '/images/photovoltaic-2138992_1280.jpg',
+    '/images/smartphone-1641906_1280.jpg',
+    '/images/wireless-charger-8062082_1280.jpg',
   ];
 
   const guideImages = [
@@ -26,7 +33,7 @@ export default function HomePage() {
     '/images/electric-car-4276419_1280.jpg',
     '/images/e-scooter-5432641_1280.jpg',
     '/images/battery-pack-1049668_1280.jpg',
-    '/images/smartphone-1641906_1280.jpg',
+    '/images/iphone-2618080_1280.jpg',
   ];
 
   return (
@@ -153,7 +160,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-64 md:h-auto min-h-[250px]">
               <Image
-                src="/images/iphone-2618080_1280.jpg"
+                src="/images/logo_site_chargeur.png"
                 alt="À propos de Chargeur-Rapide"
                 fill
                 className="object-cover"

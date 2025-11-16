@@ -22,9 +22,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
 
+  const canonicalUrl = `/${post.category}/${post.slug}`;
+
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -33,6 +42,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       modifiedTime: post.updated || post.date,
       authors: [post.author],
       images: post.cover ? [{ url: post.cover }] : [],
+      url: canonicalUrl,
     },
     twitter: {
       card: 'summary_large_image',

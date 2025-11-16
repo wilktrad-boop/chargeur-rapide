@@ -13,7 +13,10 @@ export const metadata: Metadata = {
     template: `%s – ${site.name}`
   },
   description: site.description,
-  alternates: { canonical: site.url },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: 'website',
     title: site.name,
