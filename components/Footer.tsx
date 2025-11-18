@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="mt-16 border-t border-border bg-bgSubtle" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Pied de page</h2>
-      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-3 font-semibold text-textStrong">Rubriques</div>
           <ul className="space-y-2 text-sm">
@@ -28,14 +28,6 @@ export function Footer() {
             <li><Link href="/a-propos" className="hover:text-primary">Le média</Link></li>
             <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
           </ul>
-        </div>
-        <div>
-          <div className="mb-3 font-semibold text-textStrong">Newsletter</div>
-          <p className="text-sm text-slate-600 mb-3">Recevez nos guides. Pas de spam.</p>
-          <form className="flex gap-2">
-            <input aria-label="Email" type="email" className="w-full rounded-2xl border border-border bg-white px-4 py-2" placeholder="email@exemple.fr" />
-            <button type="submit" className="rounded-2xl bg-primary px-4 py-2 text-white hover:bg-primaryHover">OK</button>
-          </form>
         </div>
       </div>
       <div className="border-t border-border py-4 text-center text-xs text-slate-500">© {new Date().getFullYear()} {site.name}.</div>

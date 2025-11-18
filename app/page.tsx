@@ -15,18 +15,7 @@ export default function HomePage() {
   const posts = getAllPosts()
     .filter((p) => !p.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
-  const latest = posts.slice(0, 6);
   const guides = posts.filter((p) => p.category === 'guides').slice(0, 5);
-
-  // Images pour les articles - rotation pour avoir de la variété
-  const articleImages = [
-    '/images/convenient-charger-8062070_1280.jpg',
-    '/images/smartphone-2568602_1280.jpg',
-    '/images/two-pin-3509490_1280.jpg',
-    '/images/photovoltaic-2138992_1280.jpg',
-    '/images/smartphone-1641906_1280.jpg',
-    '/images/wireless-charger-8062082_1280.jpg',
-  ];
 
   const guideImages = [
     '/images/carsharing-4382651_1280.jpg',
@@ -89,48 +78,17 @@ export default function HomePage() {
           ))}
         </section>
 
-        {/* Derniers articles */}
-        <section className="my-12">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-textStrong">Derniers articles</h2>
-            <Link href="/guides" className="text-sm text-primary hover:text-primaryHover">Tous les guides →</Link>
-          </div>
-          <ul className="grid gap-6 md:grid-cols-3">
-            {latest.map((p, index) => (
-              <li key={p.slug} className="group rounded-2xl border border-border overflow-hidden hover:shadow-soft transition-all">
-                <Link href={`/${p.category}/${p.slug}`}>
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={articleImages[index % articleImages.length]}
-                      alt={p.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-base font-semibold hover:text-primary">
-                      {p.title}
-                    </h3>
-                    <p className="mt-2 line-clamp-3 text-sm text-slate-700">{p.description}</p>
-                    <div className="mt-3 text-xs text-slate-500">{new Date(p.date).toLocaleDateString('fr-FR')}</div>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* Guides populaires */}
         <section className="my-12">
           <h2 className="mb-4 text-2xl font-semibold text-textStrong">Guides populaires</h2>
           <ul className="grid gap-4 md:grid-cols-2">
             {[
+              'charge-rapide-abime-batterie',
+              'laisser-telephone-charge-toute-nuit',
               'choisir-chargeur-rapide',
               'charge-30w-65w-100w',
               'erreurs-batteries',
               'charge-sans-fil-vs-filaire',
-              'borne-recharge-domicile',
-              'fonctionnement-chargeur-rapide',
             ].map((slug, index) => {
               const g = guides.find((x) => x.slug === slug) || posts.find((x) => x.slug === slug);
               return g ? (
@@ -158,12 +116,12 @@ export default function HomePage() {
         {/* À propos */}
         <section className="my-16 rounded-2xl border border-border overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="relative h-64 md:h-auto min-h-[250px]">
+            <div className="relative h-64 md:h-auto min-h-[250px] bg-white">
               <Image
                 src="/images/logo_site_chargeur.png"
                 alt="À propos de Chargeur-Rapide"
                 fill
-                className="object-cover"
+                className="object-contain p-8"
               />
             </div>
             <div className="p-8 flex flex-col justify-center">
