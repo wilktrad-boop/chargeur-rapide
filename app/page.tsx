@@ -17,14 +17,6 @@ export default function HomePage() {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   const guides = posts.filter((p) => p.category === 'guides').slice(0, 5);
 
-  const guideImages = [
-    '/images/carsharing-4382651_1280.jpg',
-    '/images/electric-car-4276419_1280.jpg',
-    '/images/e-scooter-5432641_1280.jpg',
-    '/images/battery-pack-1049668_1280.jpg',
-    '/images/iphone-2618080_1280.jpg',
-  ];
-
   return (
     <>
       <Header />
@@ -89,14 +81,14 @@ export default function HomePage() {
               'charge-30w-65w-100w',
               'erreurs-batteries',
               'charge-sans-fil-vs-filaire',
-            ].map((slug, index) => {
+            ].map((slug) => {
               const g = guides.find((x) => x.slug === slug) || posts.find((x) => x.slug === slug);
-              return g ? (
+              return g && g.cover ? (
                 <li key={slug} className="group rounded-2xl border border-border overflow-hidden hover:shadow-soft transition-all">
                   <Link href={`/${g.category}/${g.slug}`} className="flex gap-4">
                     <div className="relative w-32 h-32 flex-shrink-0">
                       <Image
-                        src={guideImages[index % guideImages.length]}
+                        src={g.cover}
                         alt={g.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
