@@ -41,3 +41,4 @@ export function SpecTable({ data }: SpecTableProps) {
 
 
 
+
