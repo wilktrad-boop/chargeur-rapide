@@ -7,10 +7,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'standalone',
-  experimental: {
-    mdxRs: true
-  },
   images: {
     formats: ['image/avif', 'image/webp']
   },
