@@ -56,7 +56,14 @@ export default async function ArticlePage({ params }: Params) {
   const post = getPostBySlug(params.slug);
   if (!post) return notFound();
 
-  const mdxSource = await serializePost(post);
+  let mdxSource;
+  try {
+    mdxSource = await serializePost(post);
+  } catch (error) {
+    console.error('Error serializing MDX:', error);
+    throw error;
+  }
+  
   const headings = extractHeadings(post.content);
 
   return (

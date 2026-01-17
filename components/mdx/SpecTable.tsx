@@ -9,9 +9,13 @@ interface SpecTableProps {
 }
 
 export function SpecTable({ data }: SpecTableProps) {
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return null;
+  }
+  
   // Détermine le nombre de colonnes nécessaires
-  const hasMultipleValues = data.some(row => row.value2 || row.value3);
-  const hasValue3 = data.some(row => row.value3);
+  const hasMultipleValues = data.some(row => (row && row.value2) || (row && row.value3));
+  const hasValue3 = data.some(row => row && row.value3);
   
   return (
     <div className="my-6 overflow-hidden rounded-2xl border border-border">
@@ -46,11 +50,11 @@ export function SpecTable({ data }: SpecTableProps) {
                   <td className="px-4 py-3">{row.value}</td>
                   {hasValue3 ? (
                     <>
-                      <td className="px-4 py-3">{row.value2 || '—'}</td>
-                      <td className="px-4 py-3">{row.value3 || '—'}</td>
+                      <td className="px-4 py-3">{row.value2 ? row.value2 : '—'}</td>
+                      <td className="px-4 py-3">{row.value3 ? row.value3 : '—'}</td>
                     </>
                   ) : (
-                    <td className="px-4 py-3">{row.value2 || '—'}</td>
+                    <td className="px-4 py-3">{row.value2 ? row.value2 : '—'}</td>
                   )}
                 </>
               ) : (
