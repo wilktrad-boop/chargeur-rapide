@@ -17,28 +17,30 @@ export function SpecTable({ data }: SpecTableProps) {
   const hasMultipleValues = data.some(row => (row && row.value2) || (row && row.value3));
   const hasValue3 = data.some(row => row && row.value3);
   
+  // Détermine les en-têtes de colonnes
+  const headers = ['Spécification'];
+  if (hasMultipleValues) {
+    headers.push('Valeur 1');
+    if (hasValue3) {
+      headers.push('Valeur 2', 'Valeur 3');
+    } else {
+      headers.push('Valeur 2');
+    }
+  } else {
+    headers.push('Valeur');
+  }
+  headers.push('Note');
+  
   return (
     <div className="my-6 overflow-hidden rounded-2xl border border-border">
       <table className="w-full">
         <thead className="bg-bgSubtle">
           <tr>
-            <th className="px-4 py-3 text-left font-semibold text-textStrong">Spécification</th>
-            {hasMultipleValues ? (
-              <>
-                <th className="px-4 py-3 text-left font-semibold text-textStrong">Valeur 1</th>
-                {hasValue3 ? (
-                  <>
-                    <th className="px-4 py-3 text-left font-semibold text-textStrong">Valeur 2</th>
-                    <th className="px-4 py-3 text-left font-semibold text-textStrong">Valeur 3</th>
-                  </>
-                ) : (
-                  <th className="px-4 py-3 text-left font-semibold text-textStrong">Valeur 2</th>
-                )}
-              </>
-            ) : (
-              <th className="px-4 py-3 text-left font-semibold text-textStrong">Valeur</th>
-            )}
-            <th className="px-4 py-3 text-left font-semibold text-textStrong">Note</th>
+            {headers.map((header, idx) => (
+              <th key={idx} className="px-4 py-3 text-left font-semibold text-textStrong">
+                {header}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -50,11 +52,11 @@ export function SpecTable({ data }: SpecTableProps) {
                   <td className="px-4 py-3">{row.value}</td>
                   {hasValue3 ? (
                     <>
-                      <td className="px-4 py-3">{row.value2 ? row.value2 : '—'}</td>
-                      <td className="px-4 py-3">{row.value3 ? row.value3 : '—'}</td>
+                      <td className="px-4 py-3">{row.value2 || '—'}</td>
+                      <td className="px-4 py-3">{row.value3 || '—'}</td>
                     </>
                   ) : (
-                    <td className="px-4 py-3">{row.value2 ? row.value2 : '—'}</td>
+                    <td className="px-4 py-3">{row.value2 || '—'}</td>
                   )}
                 </>
               ) : (
