@@ -13,7 +13,15 @@ const nextConfig = {
   i18n: {
     locales: ['fr'],
     defaultLocale: 'fr'
-  }
+  },
+  // Gérer les modules ESM correctement
+  experimental: {
+    esmExternals: true,
+  },
+  // Transpiler les packages ESM problématiques
+  transpilePackages: [
+    'next-mdx-remote',
+  ],
 };
 
 export default nextConfig;
