@@ -16,6 +16,7 @@ export default function HomePage() {
     .filter((p) => !p.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   const guides = posts.filter((p) => p.category === 'guides').slice(0, 5);
+  const latestPosts = posts.slice(0, 3);
 
   return (
     <>
@@ -41,6 +42,59 @@ export default function HomePage() {
                 priority
               />
             </div>
+          </div>
+        </section>
+
+        {/* Derniers articles */}
+        <section className="my-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-3xl font-bold text-textStrong">Derniers articles</h2>
+            <Link href="/guides" className="text-primary hover:text-primary/80 font-medium transition-colors">
+              Voir tous les articles →
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <article key={post.slug} className="group rounded-2xl border border-border overflow-hidden hover:shadow-soft transition-all bg-white">
+                <Link href={`/${post.category}/${post.slug}`}>
+                  {post.cover && (
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={post.cover}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-slate-500">
+                        {new Date(post.date).toLocaleDateString('fr-FR', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric'
+                        })}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-textStrong group-hover:text-primary transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600 line-clamp-3">
+                      {post.description}
+                    </p>
+                    {post.readingTime && (
+                      <div className="mt-4 text-xs text-slate-500">
+                        {post.readingTime} min de lecture
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              </article>
+            ))}
           </div>
         </section>
 
