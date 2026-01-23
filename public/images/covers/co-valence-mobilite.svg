@@ -1,0 +1,62 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient2)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="700" cy="100" r="100" fill="#ffffff" opacity="0.1"/>
+  <circle cx="100" cy="300" r="70" fill="#ffffff" opacity="0.08"/>
+
+  <!-- Electric car icon -->
+  <g transform="translate(200, 100)">
+    <!-- Car body -->
+    <path d="M50 80 L80 40 L180 40 L210 80 Z"
+          fill="url(#iconGradient2)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M30 80 L50 80 L50 120 L30 120 Q20 120 20 110 L20 90 Q20 80 30 80 Z"
+          fill="url(#iconGradient2)"/>
+    <path d="M210 80 L230 80 Q240 80 240 90 L240 110 Q240 120 230 120 L210 120 Z"
+          fill="url(#iconGradient2)"/>
+
+    <!-- Windows -->
+    <path d="M85 45 L95 65 L145 65 L155 45 Z" fill="#3b82f6" opacity="0.6"/>
+    <path d="M160 45 L165 65 L200 65 L205 45 Z" fill="#3b82f6" opacity="0.6"/>
+
+    <!-- Wheels -->
+    <circle cx="70" cy="120" r="20" fill="#1f2937" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="190" cy="120" r="20" fill="#1f2937" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="70" cy="120" r="8" fill="#ffffff"/>
+    <circle cx="190" cy="120" r="8" fill="#ffffff"/>
+
+    <!-- Lightning bolt (charging) -->
+    <path d="M330 50 L310 80 L320 80 L305 110 L325 80 L315 80 Z"
+          fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+  </g>
+
+  <!-- Location pin -->
+  <g transform="translate(550, 180)">
+    <path d="M40 0 Q60 0 70 15 Q80 30 70 45 L40 90 L10 45 Q0 30 10 15 Q20 0 40 0 Z"
+          fill="url(#iconGradient2)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="40" cy="30" r="12" fill="#10b981"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="48"
+        font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Co Valence
+  </text>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="24"
+        fill="#ffffff" opacity="0.95" text-anchor="middle">
+    Mobilité électrique à Valence
+  </text>
+</svg>
