@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -8,11 +9,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    formats: ['image/avif', 'image/webp']
-  },
-  i18n: {
-    locales: ['fr'],
-    defaultLocale: 'fr'
+    unoptimized: true,
   },
   // Gérer les modules ESM correctement
   experimental: {
