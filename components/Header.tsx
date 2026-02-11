@@ -15,7 +15,7 @@ export function Header() {
             <span>Chargeur-Rapide</span>
           </Link>
           <nav className="hidden gap-6 md:flex" aria-label="Navigation principale">
-            {site.nav.slice(0, 5).map((item) => (
+            {site.nav.slice(0, 6).map((item) => (
               <Link key={item.href} href={item.href} prefetch className="text-sm hover:text-primary focus-ring">
                 {item.label}
               </Link>

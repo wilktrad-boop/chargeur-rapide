@@ -12,7 +12,7 @@ export const FrontmatterSchema = z.object({
   date: z.string(),
   updated: z.string().optional(),
   author: z.string().default('Rédaction'),
-  category: z.enum(['chargeurs', 'batteries', 'mobilite', 'energie', 'guides']),
+  category: z.enum(['chargeurs', 'batteries', 'mobilite', 'energie', 'guides', 'entreprise']),
   tags: z.array(z.string()).default([]),
   cover: z.string().optional(),
   readingTime: z.number().optional(),
@@ -30,7 +30,7 @@ export type Post = Frontmatter & {
 
 export function listMdxFiles() {
   const entries: string[] = [];
-  const categories = ['chargeurs', 'batteries', 'mobilite', 'energie', 'guides'];
+  const categories = ['chargeurs', 'batteries', 'mobilite', 'energie', 'guides', 'entreprise'];
   for (const dir of categories) {
     const full = path.join(CONTENT_DIR, dir);
     if (!fs.existsSync(full)) continue;
