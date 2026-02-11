@@ -12,12 +12,13 @@ export const site = {
     { label: 'Mobilité', href: '/mobilite' },
     { label: 'Énergie', href: '/energie' },
     { label: 'Guides', href: '/guides' },
+    { label: 'Entreprise', href: '/entreprise' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' }
   ]
 } as const;
 
-export type CategoryKey = 'chargeurs' | 'batteries' | 'mobilite' | 'energie' | 'guides';
+export type CategoryKey = 'chargeurs' | 'batteries' | 'mobilite' | 'energie' | 'guides' | 'entreprise';
 
 export const categories: Record<CategoryKey, { label: string; description: string; cover: string }> = {
   chargeurs: {
@@ -44,6 +45,11 @@ export const categories: Record<CategoryKey, { label: string; description: strin
     label: 'Guides',
     description: 'Guides transverses et pratiques.',
     cover: '/images/covers/guides.jpg'
+  },
+  entreprise: {
+    label: 'Entreprise',
+    description: 'Ressources et outils pour les professionnels et entrepreneurs.',
+    cover: '/images/covers/entreprise.jpg'
   }
 };
 
