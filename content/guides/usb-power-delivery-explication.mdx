@@ -1,0 +1,93 @@
+---
+title: "USB Power Delivery : tout comprendre en 5 minutes"
+description: "Qu'est-ce que l'USB Power Delivery (USB PD) ? Versions, puissances, compatibilité et différences avec Quick Charge. Le guide clair et complet."
+slug: "usb-power-delivery-explication"
+date: "2025-11-01"
+updated: "2025-11-01"
+author: "Rédaction"
+category: "guides"
+tags: ["USB-PD","Power-Delivery","charge-rapide","USB-C","standard"]
+cover: "/images/covers/usb-power-delivery-explication.jpg"
+readingTime: 7
+toc: true
+schemaType: "Article"
+---
+
+## USB Power Delivery : définition simple
+
+**USB Power Delivery (USB PD)** est un standard de charge rapide développé par l'USB Implementers Forum (USB-IF). Il permet à un câble USB-C de transporter jusqu'à 240 W tout en laissant le chargeur et l'appareil **négocier automatiquement** la tension et l'intensité optimales.
+
+En résumé : c'est le protocole qui explique pourquoi votre chargeur de MacBook peut aussi charger votre iPhone, et vice-versa.
+
+<Callout type="info">
+USB PD est le seul standard de charge rapide **vraiment universel**. Contrairement au Quick Charge de Qualcomm (réservé aux puces Qualcomm) ou au SuperDart de OnePlus (propriétaire), l'USB PD fonctionne avec n'importe quel appareil qui l'intègre, quelle que soit la marque.
+</Callout>
+
+## Comment fonctionne la négociation USB PD ?
+
+Quand vous branchez un câble USB-C PD, voici ce qui se passe en quelques millisecondes :
+
+1. Le chargeur annonce les "profils de puissance" qu'il peut délivrer (ex : 5V/3A, 9V/3A, 15V/3A, 20V/3A)
+2. L'appareil choisit le profil le plus adapté à ses besoins
+3. Le chargeur ajuste sa sortie en conséquence
+4. Si l'appareil chauffe ou n'a besoin que d'un entretien de charge, il peut réduire sa demande dynamiquement
+
+<Callout type="warn">
+Cette négociation ne fonctionne qu'avec des câbles USB-C conformes. Un vieux câble micro-USB ou un câble USB-C bas de gamme sans communication PD ne permettra pas la charge rapide, même avec un chargeur PD 100 W.
+</Callout>
+
+## Les versions de l'USB Power Delivery
+
+<SpecTable data={[
+  {spec: "USB PD 1.0 (2012)", value: "Jusqu'à 100 W", note: "Première génération — peu déployée"},
+  {spec: "USB PD 2.0 (2014)", value: "Jusqu'à 100 W", note: "Profils fixes : 5, 9, 15, 20 V"},
+  {spec: "USB PD 3.0 (2019)", value: "Jusqu'à 100 W + PPS", note: "Ajout PPS (tensions variables)"},
+  {spec: "USB PD 3.1 (2021)", value: "Jusqu'à 240 W", note: "EPR : Extended Power Range, nouvelles tensions 28, 36, 48 V"}
+]} />
+
+### L'apport du PPS (Programmable Power Supply)
+
+Intégré dans USB PD 3.0, le **PPS** permet des ajustements de tension en pas de 20 mV — bien plus précis que les paliers fixes du PD 2.0. Ce contrôle fin permet une charge plus efficace et moins chauffante, exploitée notamment par :
+- Samsung avec Super Fast Charging
+- Qualcomm Quick Charge 4+
+- Google Pixel Fast Charging
+
+## USB PD vs Quick Charge : quelle différence ?
+
+| Critère | USB PD | Quick Charge |
+|---|---|---|
+| Développeur | USB-IF (standard ouvert) | Qualcomm (propriétaire) |
+| Compatibilité | Universel (iPhone, Android, Mac, PC) | Appareils Qualcomm principalement |
+| Puissance max | 240 W (PD 3.1) | 100 W (QC 5) |
+| Connecteur | USB-C uniquement | USB-A ou USB-C |
+| Adoption | Obligatoire iPhone 15+, MacBook | Android milieu de gamme |
+
+**En pratique :** Pour les appareils récents (iPhone 15, Android 2023+, MacBook), USB PD est la meilleure option. Quick Charge reste pertinent pour les appareils Android avec puce Qualcomm achetés avant 2022.
+
+## Puissances pratiques selon les appareils
+
+<SpecTable data={[
+  {spec: "iPhone 15 / 16", value: "27 W (PD 2.0)", note: "Nécessite un câble USB-C"},
+  {spec: "Samsung Galaxy S24", value: "45 W (PD 3.0 + PPS)", note: "Super Fast Charging 2.0"},
+  {spec: "Google Pixel 8", value: "30 W (PD 3.0)", note: ""},
+  {spec: "iPad Pro M4", value: "45 W (PD 3.0)", note: ""},
+  {spec: "MacBook Air M3", value: "67 W (PD 3.0)", note: "Charge lente possible à 30 W"},
+  {spec: "MacBook Pro 14\" M3", value: "96-140 W (PD 3.0)", note: "Câble E-Marker requis pour > 60 W"},
+  {spec: "PC portable Dell/HP", value: "65-130 W (PD 3.0)", note: "Selon modèle"}
+]} />
+
+## Comment identifier un chargeur USB PD ?
+
+Cherchez sur l'étiquette du chargeur ou dans la fiche produit :
+- La mention explicite **"USB PD"** ou **"Power Delivery"**
+- Des profils de tension multiples (ex : 5V/3A, 9V/3A, 15V/3A, 20V/3A)
+- Le logo USB-IF sur les produits certifiés
+
+## FAQ
+
+<FAQ items={[
+  {q: "Un chargeur USB PD est-il rétrocompatible avec mes anciens appareils ?", a: "Oui. USB PD est rétrocompatible vers le bas. Sur un vieil appareil qui ne supporte que 5 V/2 A, le chargeur PD délivrera simplement 5 V/2 A — aucun risque."},
+  {q: "Dois-je acheter un câble spécial pour USB PD ?", a: "Pour les puissances jusqu'à 60 W, un bon câble USB-C certifié suffit. Au-delà de 60 W, il faut un câble avec puce E-Marker certifiée 100 W. Ces câbles sont marqués '5A' ou '100W' et coûtent 10-20 €."},
+  {q: "Le Quick Charge de mon téléphone Android fonctionne-t-il avec un chargeur USB PD ?", a: "Ça dépend. Si votre téléphone supporte PD + PPS (la plupart des Android récents), il chargera vite avec un bon chargeur PD. Si votre téléphone utilise uniquement Quick Charge propriétaire, il chargera en 18 W PD standard au mieux."},
+  {q: "USB PD 3.1 (240 W) est-il disponible sur les smartphones ?", a: "Pas encore. Le 240 W PD 3.1 est réservé aux PC portables gaming et aux stations de travail. Les smartphones plafonnent à 45-65 W en USB PD, les batteries plus petites ne nécessitant pas plus."}
+]} />

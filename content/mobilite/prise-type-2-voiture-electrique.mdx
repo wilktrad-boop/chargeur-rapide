@@ -1,0 +1,99 @@
+---
+title: "Prise Type 2 : tout savoir sur le standard de charge européen"
+description: "Qu'est-ce que la prise Type 2 pour voiture électrique ? Compatibilité, puissance, câble, différences avec le CCS. Guide complet du standard européen."
+slug: "prise-type-2-voiture-electrique"
+date: "2025-11-01"
+updated: "2025-11-01"
+author: "Rédaction"
+category: "mobilite"
+tags: ["prise-type-2","voiture-électrique","recharge","standard","câble","Europe"]
+cover: "/images/covers/prise-type-2-voiture-electrique.jpg"
+readingTime: 8
+toc: true
+schemaType: "Article"
+---
+
+## Qu'est-ce que la prise Type 2 ?
+
+La **prise Type 2** (aussi appelée **IEC 62196 Type 2** ou **Mennekes**) est le standard européen de recharge en courant alternatif (AC) pour les véhicules électriques. Elle est imposée depuis 2014 par la directive européenne AFID comme connecteur obligatoire sur toutes les bornes de recharge publiques en Europe.
+
+<Callout type="info">
+La prise Type 2 tire son surnom "Mennekes" du fabricant allemand qui l'a conçue. Elle est reconnaissable à sa forme ronde avec 7 broches : 1 PE (terre), 1 N (neutre), 3 phases, 1 CP (communication) et 1 PP (présence du câble).
+</Callout>
+
+## Description technique
+
+<SpecTable data={[
+  {spec: "Nombre de broches", value: "7 broches", note: "3 phases + neutre + terre + 2 communication"},
+  {spec: "Courant monophasé max", value: "32 A / 230 V = 7,4 kW", note: "Usage résidentiel standard"},
+  {spec: "Courant triphasé max", value: "63 A × 3 / 400 V = ~43 kW", note: "Bornes publiques haute puissance"},
+  {spec: "Puissance max", value: "43 kW en AC", note: "Rarement disponible en pratique"},
+  {spec: "Communication", value: "Pilote de contrôle (CP)", note: "Dialogue véhicule ↔ borne"}
+]} />
+
+## Type 2 vs CCS Combo 2 : quelle différence ?
+
+Le **CCS Combo 2** (Combined Charging System) est une extension du Type 2 pour la charge rapide en courant continu. Il reprend exactement le connecteur Type 2 en partie haute et ajoute 2 broches DC en partie basse.
+
+<SpecTable data={[
+  {spec: "Prise Type 2", value: "Charge AC uniquement", note: "7,4 kW (mono) à 22 kW (tri) maximum"},
+  {spec: "Prise CCS Combo 2", value: "Charge AC + DC rapide", note: "Jusqu'à 350 kW en DC"},
+  {spec: "Compatibilité", value: "Type 2 ⊂ CCS", note: "Un câble Type 2 fonctionne sur un connecteur CCS"}
+]} />
+
+<Callout type="info">
+Tous les véhicules avec prise CCS ont également un port Type 2 (c'est le même connecteur, augmenté). Un câble Type 2 standard se branche parfaitement sur une prise CCS pour la charge AC.
+</Callout>
+
+## Quel câble Type 2 acheter ?
+
+Il existe deux types de câbles :
+
+### Câble tethered (attaché à la borne)
+Les wallbox résidentielles livrent souvent un câble fixé à la borne. Pratique, mais vous ne pouvez pas emporter le câble.
+
+### Câble mode 3 (à emporter)
+Pour les bornes publiques, vous devez généralement apporter votre propre câble Type 2. Critères d'achat :
+
+<SpecTable data={[
+  {spec: "Câble 16 A / Type 2", value: "Puissance max 11 kW", note: "Suffisant pour bornes publiques standard"},
+  {spec: "Câble 32 A / Type 2", value: "Puissance max 22 kW", note: "Pour les véhicules et bornes 22 kW"},
+  {spec: "Longueur recommandée", value: "5-7 mètres", note: "Longueur minimale en parking public"},
+  {spec: "Certification", value: "TÜV / CE obligatoire", note: "Sécurité électrique garantie"}
+]} />
+
+## Compatibilité des véhicules avec le Type 2
+
+<ProsCons
+  pros={[
+    "Standard sur 100 % des voitures électriques européennes vendues depuis 2014",
+    "Compatible avec toutes les wallbox résidentielles",
+    "Compatible avec toutes les bornes publiques AC en Europe",
+    "Un seul câble pour tous les véhicules et toutes les bornes"
+  ]}
+  cons={[
+    "Limité à 43 kW en AC (pas de charge ultra-rapide)",
+    "Pour la charge rapide DC, il faut le CCS Combo 2",
+    "Les anciens véhicules américains/japonais utilisent d'autres standards (J1772, CHAdeMO)"
+  ]}
+/>
+
+## Où brancher son câble Type 2 ?
+
+En France, les bornes publiques Type 2 se trouvent :
+- **Centres commerciaux** (Carrefour, Leclerc, IKEA)
+- **Parkings municipaux**
+- **Autoroutes** (aires de service, puissance souvent 22-50 kW)
+- **Hôtels et camping**
+- **Résidences et copropriétés** (obligation légale depuis 2021 pour les nouveaux immeubles)
+
+Les applications **Chargemap** et **PlugShare** référencent en temps réel les bornes disponibles.
+
+## FAQ
+
+<FAQ items={[
+  {q: "Mon câble Type 2 fonctionne-t-il partout en Europe ?", a: "Oui. Le Type 2 est le standard européen imposé par la directive AFID. En France, Allemagne, Pays-Bas, Belgique, Espagne, Italie — le même câble fonctionne sur toutes les bornes AC publiques."},
+  {q: "Quelle est la différence entre Type 1 et Type 2 ?", a: "Le Type 1 (J1772) est un connecteur à 5 broches utilisé aux États-Unis et sur les anciens véhicules japonais (ancienne Nissan Leaf, ancienne Mitsubishi Outlander PHEV). Le Type 2 est le standard européen à 7 broches. Ils sont incompatibles sans adaptateur."},
+  {q: "Peut-on laisser son câble Type 2 dans le coffre ?", a: "Oui, c'est même recommandé. La plupart des conducteurs de VE gardent leur câble dans un sac dans le coffre. Attention à la longueur : 7 m est un minimum confortable pour atteindre toutes les bornes."},
+  {q: "Le câble Type 2 est-il inclus à l'achat d'une voiture électrique ?", a: "Ça dépend des constructeurs. Certains incluent un câble Mode 3 Type 2, d'autres non (Tesla, par exemple, ne fournit pas de câble dans le pack de base). Vérifiez l'équipement inclus dans votre contrat d'achat."}
+]} />

@@ -1,0 +1,97 @@
+---
+title: "Chargeur USB-C pour PC portable : puissance et compatibilité"
+description: "Quel chargeur USB-C pour votre ordinateur portable ? Guide complet sur la puissance nécessaire, la compatibilité USB PD et les meilleurs modèles."
+slug: "chargeur-usb-c-ordinateur-portable"
+date: "2025-11-01"
+updated: "2025-11-01"
+author: "Rédaction"
+category: "chargeurs"
+tags: ["USB-C","PC-portable","chargeur","Power-Delivery","MacBook"]
+cover: "/images/covers/chargeur-usb-c-pc-portable.jpg"
+readingTime: 9
+toc: true
+schemaType: "Article"
+---
+
+## Peut-on charger n'importe quel PC portable avec un chargeur USB-C ?
+
+Depuis 2018, la directive européenne pousse les fabricants à adopter **USB-C comme port de charge universel**. En 2025, la grande majorité des ultraportables (MacBook, Dell XPS, Lenovo ThinkPad, HP Spectre, Surface Pro) utilisent USB-C avec le protocole **USB Power Delivery** pour se recharger.
+
+<Callout type="info">
+Un chargeur USB-C PD de marque sérieuse est universel : il charge à la bonne puissance en négociant automatiquement avec l'appareil. Votre MacBook demandera 96 W, votre Dell XPS demandera 65 W — le même chargeur gère les deux.
+</Callout>
+
+## Quelle puissance pour votre PC portable ?
+
+<SpecTable data={[
+  {spec: "MacBook Air M1/M2/M3 13\"", value: "30 W (charge lente) / 67 W (charge normale)", note: "67 W recommandé par Apple"},
+  {spec: "MacBook Air M2/M3 15\"", value: "35 W (charge lente) / 70 W (charge normale)", note: "70 W recommandé"},
+  {spec: "MacBook Pro 14\" M3", value: "96 W", note: "140 W pour charge rapide"},
+  {spec: "MacBook Pro 16\" M3", value: "140 W", note: "Adaptateur MagSafe 140 W ou USB-C 140 W"},
+  {spec: "Dell XPS 13/15", value: "65 W / 130 W", note: "Selon modèle"},
+  {spec: "Lenovo ThinkPad X1 Carbon", value: "65 W", note: "Charge lente possible en 45 W"},
+  {spec: "HP Spectre x360 13\"", value: "65 W", note: ""},
+  {spec: "Surface Pro 9/10", value: "65 W USB-C", note: "Ou connecteur Surface propriétaire"},
+  {spec: "ASUS ZenBook 14", value: "65-90 W", note: "Selon configuration"}
+]} />
+
+## Ce qui se passe si vous utilisez un chargeur sous-dimensionné
+
+Un chargeur trop faible ne détériore pas votre PC, mais il charge lentement voire pas du tout sous charge :
+
+- MacBook Air M2 avec chargeur 30 W : charge le PC **à l'arrêt uniquement**. En utilisation, la batterie se décharge malgré le câble branché.
+- MacBook Pro 14" avec chargeur 65 W : charge lentement, même sans utilisation.
+- Toujours privilégier un chargeur de la puissance recommandée ou légèrement supérieure.
+
+## Chargeur plus puissant que nécessaire : est-ce dangereux ?
+
+**Non.** USB Power Delivery est un protocole de négociation bidirectionnelle. Votre PC demande la puissance dont il a besoin, le chargeur s'y adapte. Brancher un chargeur 140 W sur un MacBook Air ne l'endommagera pas — l'Air ne consommera que 67 W.
+
+<Callout type="info">
+C'est l'un des grands avantages de l'USB-C PD : un seul chargeur 100 W couvre tous vos appareils, du smartphone au PC portable.
+</Callout>
+
+## Chargeurs recommandés par puissance
+
+### 65 W (ultraportables et MacBook Air)
+
+<ProsCons
+  pros={[
+    "Couvre 90 % des ultraportables du marché",
+    "Format compact, surtout en version GaN",
+    "Prix abordable (30-60 € en GaN)",
+    "Un seul câble USB-C pour tout"
+  ]}
+  cons={[
+    "Insuffisant pour MacBook Pro 14\"/16\"",
+    "Charge lente sur certains PC plus puissants"
+  ]}
+/>
+
+### 96-100 W (MacBook Pro 14", PC haut de gamme)
+
+Idéal pour les créatifs et professionnels. Un 100 W GaN est la solution la plus polyvalente du marché.
+
+### 140 W (MacBook Pro 16", PC gaming léger)
+
+Nécessaire pour la charge rapide du MacBook Pro 16". Les chargeurs 140 W GaN de marques comme Anker ou UGREEN sont désormais accessibles.
+
+## Le câble : l'autre variable importante
+
+Un chargeur 100 W avec un mauvais câble ne délivrera que 60 W maximum. Pour les charges > 60 W, le câble doit être **certifié USB-C 100 W avec puce E-Marker**.
+
+<SpecTable data={[
+  {spec: "Câble USB-C classique (sans E-Marker)", value: "Maximum 60 W (3 A × 20 V)", note: "Suffisant pour la majorité des ultraportables"},
+  {spec: "Câble USB-C avec E-Marker", value: "Jusqu'à 100 W (5 A × 20 V)", note: "Requis pour MacBook Pro et PC > 60 W"},
+  {spec: "Câble USB4/Thunderbolt 4", value: "Jusqu'à 240 W (PD 3.1)", note: "Haut de gamme, données + charge"}
+]} />
+
+## FAQ
+
+<FAQ items={[
+  {q: "Peut-on charger un Mac avec un chargeur Samsung ou Anker ?", a: "Oui, parfaitement. Les chargeurs USB-C PD de marques sérieuses sont universels. Votre Mac négociera automatiquement la bonne puissance."},
+  {q: "Mon PC portable charge via le port USB-C ou Thunderbolt ?", a: "Les deux. Thunderbolt 4 et USB4 sont compatibles USB PD. Vous pouvez charger via n'importe quel port USB-C sur votre PC, sauf si la fiche technique indique explicitement 'charge uniquement via USB-A'."},
+  {q: "Un chargeur USB-C charge-t-il aussi vite que le chargeur d'origine ?", a: "Oui, si la puissance est équivalente. Un chargeur tiers 67 W chargera le MacBook Air aussi vite que l'adaptateur Apple officiel."},
+  {q: "Peut-on utiliser un câble Lightning pour charger un Mac ?", a: "Non. Le Lightning est un format Apple uniquement pour les anciens iPhone et n'est pas compatible avec la charge USB-C des Mac."},
+  {q: "Comment savoir si mon PC portable est compatible USB-C PD ?", a: "Regardez les ports USB-C : si l'un porte un symbole éclair ⚡ ou si la fiche technique mentionne 'USB-C Power Delivery' ou 'charge via USB-C', c'est compatible."}
+]} />

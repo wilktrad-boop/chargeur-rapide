@@ -1,0 +1,95 @@
+---
+title: "Recharge rapide voiture électrique : DC, AC, CCS, CHAdeMO expliqués"
+description: "Comment fonctionne la recharge rapide pour voiture électrique ? AC vs DC, CCS, CHAdeMO, Supercharger Tesla : tout comprendre pour rouler sans stress."
+slug: "recharge-rapide-voiture-electrique"
+date: "2025-11-01"
+updated: "2025-11-01"
+author: "Rédaction"
+category: "mobilite"
+tags: ["recharge-rapide","voiture-électrique","CCS","CHAdeMO","DC","AC"]
+cover: "/images/covers/recharge-rapide-voiture-electrique.jpg"
+readingTime: 11
+toc: true
+schemaType: "Article"
+---
+
+## Recharge AC vs recharge DC : la différence fondamentale
+
+Il existe deux grandes familles de recharge pour voitures électriques, qui s'opposent sur un point crucial : où se trouve le convertisseur AC/DC.
+
+### Recharge AC (courant alternatif)
+
+Le convertisseur est **embarqué dans le véhicule**. La borne délivre du courant alternatif (comme votre prise murale), et c'est l'électronique du véhicule qui le convertit en courant continu pour la batterie. Limite : la puissance maximale est contrainte par la taille du convertisseur embarqué (souvent 7,4 kW ou 11 kW).
+
+### Recharge DC (courant continu)
+
+Le convertisseur est **dans la borne**. Elle délivre directement du courant continu à haute puissance à la batterie. C'est ce qui permet des puissances de 50, 150, 350 kW — impossibles avec un convertisseur embarqué.
+
+<Callout type="info">
+La recharge DC rapide (aussi appelée "charge rapide en courant continu" ou simplement "fast charge") est la technologie des bornes autoroutières et des supermarchés.
+</Callout>
+
+## Puissances de recharge et temps estimés
+
+<SpecTable data={[
+  {spec: "Prise domestique (2,3 kW)", value: "60 kWh → 26 h", note: "Dépannage uniquement"},
+  {spec: "Wallbox 7,4 kW AC", value: "60 kWh → 8 h", note: "Recharge nocturne domicile"},
+  {spec: "Wallbox 11 kW AC", value: "60 kWh → 5,5 h", note: "Si véhicule compatible triphasé"},
+  {spec: "Borne publique 22 kW AC", value: "60 kWh → 3 h", note: "Limitée par le chargeur embarqué"},
+  {spec: "Borne DC 50 kW", value: "60 kWh → ~1 h", note: "0 à 80 % en ~45 min"},
+  {spec: "Borne DC 150 kW", value: "60 kWh → ~25 min", note: "0 à 80 % en ~20 min"},
+  {spec: "Borne DC 350 kW", value: "Hypervoltage", note: "Hyundai Ioniq 6, Kia EV6 : 18 min de 10 à 80 %"}
+]} />
+
+<Callout type="warn">
+La charge rapide ne dépasse généralement pas 80 % en charge rapide DC. Au-delà, le véhicule réduit volontairement la puissance pour protéger la batterie. De 80 à 100 %, la charge est aussi lente qu'en AC.
+</Callout>
+
+## Les standards de connecteurs en 2025
+
+### CCS (Combined Charging System) — Le standard européen
+
+Le **CCS Combo 2** est le standard dominant en Europe depuis 2014. Il combine :
+- Le connecteur Type 2 (AC, partie haute)
+- Deux broches DC supplémentaires (partie basse)
+
+Presque toutes les voitures électriques européennes (Volkswagen, Stellantis, BMW, Mercedes, Hyundai/Kia, Tesla depuis 2022) utilisent CCS.
+
+### CHAdeMO — En déclin
+
+Standard japonais (Nissan Leaf, Mitsubishi i-MiEV). Encore présent en France mais de moins en moins déployé. Nissan a annoncé l'abandon progressif du CHAdeMO au profit du CCS.
+
+### Supercharger Tesla (NACS)
+
+Tesla a ouvert son réseau de Superchargers en Europe en 2022-2023. Depuis 2024, le connecteur Tesla (NACS) est adopté par Ford, General Motors et Rivian aux États-Unis. En Europe, Tesla utilise le connecteur Type 2 / CCS.
+
+### Type 2 — Standard AC européen
+
+Tous les véhicules européens utilisent le **Type 2** pour la charge AC (wallbox, bornes publiques lentes). C'est le même connecteur que la partie haute du CCS.
+
+## Quel réseau de recharge utiliser ?
+
+<SpecTable data={[
+  {spec: "Ionity", value: "350 kW max", note: "Réseau premium autoroutes, tarif à l'usage élevé"},
+  {spec: "Supercharger Tesla", value: "250 kW max", note: "Ouvert aux non-Tesla avec adaptateur"},
+  {spec: "Recharge.fr (EDF)", value: "150 kW max", note: "Réseau national, tarif abonnement"},
+  {spec: "TotalEnergies Charge+", value: "150 kW max", note: "Stations-service"},
+  {spec: "Lidl Charging", value: "50-150 kW", note: "Accessible, bon rapport prix/puissance"},
+  {spec: "Belib' (Paris)", value: "22 kW AC + 50 kW DC", note: "Réseau municipal Paris"}
+]} />
+
+## Conseils pour une recharge rapide réussie
+
+1. **Planifier à l'avance** : applications Chargemap, A Better Routeplanner, Waze
+2. **Arriver avec 10-20 % de batterie** : les bornes DC sont plus efficaces entre 10 et 80 %
+3. **Préconditionner la batterie** : sur les véhicules récents, le GPS de recharge préconditionne automatiquement la batterie pour la charge rapide
+4. **Éviter les pointes** : les bornes autoroutières sont saturées le vendredi soir et le dimanche après-midi
+
+## FAQ
+
+<FAQ items={[
+  {q: "La charge rapide DC abîme-t-elle la batterie ?", a: "Marginalement, si utilisée quotidiennement. En usage occasionnel (voyages), l'impact est négligeable sur la durée de vie globale. Les constructeurs dimensionnent leurs batteries pour des milliers de cycles de charge rapide."},
+  {q: "Ma voiture peut-elle charger sur une borne 350 kW même si elle n'accepte que 100 kW ?", a: "Oui. La puissance de charge est limitée par le plus faible des deux : le véhicule ou la borne. Votre voiture ne prendra que 100 kW maximum, même sur une borne 350 kW."},
+  {q: "Quel câble pour une borne de recharge rapide ?", a: "Les bornes DC fournissent généralement leur propre câble (câble attaché). Pour les bornes AC, vous devez apporter votre câble Type 2. Les bornes sont équipées d'une prise femelle Type 2 standard."},
+  {q: "Tesla peut-il charger sur des bornes non-Tesla ?", a: "Oui. En Europe, les Tesla utilisent un connecteur Type 2 standard et sont compatibles avec toutes les bornes AC et la plupart des bornes DC CCS avec l'adaptateur inclus."}
+]} />
