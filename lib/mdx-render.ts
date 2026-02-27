@@ -18,10 +18,12 @@ export async function serializePost(post: Post) {
   return serialize(withLinks, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [
-        rehypeSlug
-      ],
+      rehypePlugins: [rehypeSlug],
     },
+    // next-mdx-remote v6 bloque les expressions JS par défaut (blockJS: true)
+    // ce qui supprime les props de type {[...]} dans les composants MDX
+    blockJS: false,
+    blockDangerousJS: false,
   });
 }
 
