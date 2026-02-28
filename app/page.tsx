@@ -16,7 +16,10 @@ export default function HomePage() {
     .filter((p) => !p.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   const guides = posts.filter((p) => p.category === 'guides').slice(0, 5);
-  const latestPosts = posts.slice(0, 3);
+  const pinnedSlugs = ['perplexity-avis', 'wispr-flow-avis', 'iclosed-avis'];
+  const featuredPosts = pinnedSlugs
+    .map((slug) => posts.find((p) => p.slug === slug))
+    .filter(Boolean) as typeof posts;
 
   return (
     <>
@@ -54,7 +57,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {latestPosts.map((post) => (
+            {featuredPosts.map((post) => (
               <article key={post.slug} className="group rounded-2xl border border-border overflow-hidden hover:shadow-soft transition-all bg-white">
                 <Link href={`/${post.category}/${post.slug}`}>
                   {post.cover && (

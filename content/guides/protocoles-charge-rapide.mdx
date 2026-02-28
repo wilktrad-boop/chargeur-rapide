@@ -1,0 +1,117 @@
+---
+title: "Quick Charge, SuperVOOC, WARP, PPS : quel protocole de charge rapide ?"
+description: "Comparatif complet des protocoles de charge rapide : Qualcomm Quick Charge, USB PD, SuperVOOC, WARP, Adaptive Fast Charge. Lequel est fait pour vous ?"
+slug: "protocoles-charge-rapide"
+date: "2026-02-28"
+updated: "2026-02-28"
+author: "Rédaction"
+category: "guides"
+tags: ["protocoles","charge rapide","Quick Charge","SuperVOOC","WARP","PPS","USB PD"]
+cover: "/images/covers/protocoles-charge-rapide.jpg"
+readingTime: 12
+toc: true
+schemaType: "Article"
+---
+
+## Pourquoi il existe autant de protocoles de charge rapide
+
+La charge rapide repose sur un principe simple : augmenter la puissance (watts = volts × ampères) pour remplir la batterie plus vite. Mais chaque fabricant a développé sa propre méthode pour le faire, avec des variantes propriétaires incompatibles entre elles.
+
+Résultat : un chargeur WARP ne charge pas en WARP un téléphone Samsung, et un chargeur Adaptive Fast Charge ne donne pas ses 25 W à un iPhone. **Seul USB Power Delivery (USB PD) est vraiment universel.**
+
+<Callout type="info">
+La règle de base : pour profiter de la charge rapide propriétaire maximale d'un téléphone, il faut le chargeur de la même marque. Mais un bon chargeur USB PD tiers vous donnera toujours une charge rapide correcte sur n'importe quel appareil.
+</Callout>
+
+## Les protocoles de charge rapide : tableau comparatif
+
+<SpecTable data={[
+  {spec: "USB Power Delivery (PD)", value: "Universel USB-C", note: "Standard ouvert, jusqu'à 240 W — le plus polyvalent"},
+  {spec: "Qualcomm Quick Charge 5", value: "Android haut de gamme", note: "Jusqu'à 100 W, charge 0-50 % en 5 min (Snapdragon)"},
+  {spec: "SuperVOOC (OPPO/OnePlus)", value: "OPPO, OnePlus, Realme", note: "Jusqu'à 240 W — le plus rapide du marché"},
+  {spec: "WARP / DASH Charge (OnePlus)", value: "OnePlus (anciens)", note: "33-65 W, remplacé par SuperVOOC sur récents"},
+  {spec: "Adaptive Fast Charge (Samsung)", value: "Samsung Galaxy", note: "15-45 W selon modèle, compatible QC"},
+  {spec: "Super Fast Charging 2.0", value: "Samsung Galaxy S22+", note: "45 W — uniquement avec chargeur Samsung 45 W"},
+  {spec: "SUPERCHARGE (Huawei)", value: "Huawei / Honor", note: "40-135 W selon modèle"},
+  {spec: "PPS (Programmable Power Supply)", value: "Extension de USB PD", note: "Charge adaptative, moins de chaleur — intégré à QC4+ et PD3.0"}
+]} />
+
+## USB Power Delivery : le seul standard universel
+
+USB PD est le protocole standardisé par l'USB Implementers Forum. Il fonctionne sur tous les appareils USB-C et adapte automatiquement la tension et l'intensité à ce que l'appareil peut accepter.
+
+**Puissances supportées :**
+- PD 2.0 : jusqu'à 100 W
+- PD 3.0 : jusqu'à 100 W + PPS (charge adaptative)
+- PD 3.1 : jusqu'à 240 W (pour PC portables)
+
+<Callout type="info">
+Depuis 2023, l'Union Européenne impose l'USB-C et USB PD sur tous les smartphones, tablettes et PC portables vendus en Europe. USB PD devient donc le standard de facto pour les années à venir.
+</Callout>
+
+## Qualcomm Quick Charge : le standard Android haut de gamme
+
+Quick Charge est développé par Qualcomm et intégré dans leurs processeurs Snapdragon. Il est présent sur des centaines de modèles Android (Samsung, Xiaomi, Sony, Motorola...).
+
+**Évolution des versions :**
+- QC 2.0 : 18 W
+- QC 3.0 : 18 W avec tension adaptative (plus efficace)
+- QC 4+ : 100 W + PPS + compatible USB PD
+- QC 5 : 100 W, 0-50 % en 5 minutes
+
+**Compatibilité croisée :** un chargeur QC 3.0 charge en QC un téléphone QC 3.0, mais aussi en USB PD un iPhone — c'est la polyvalence clé des bons chargeurs tiers.
+
+## SuperVOOC : la course aux watts chez OPPO et OnePlus
+
+SuperVOOC est le protocole propriétaire d'OPPO, utilisé également sur OnePlus et Realme. Il se distingue par des puissances extrêmes obtenues grâce à une batterie divisée en deux cellules chargées en parallèle.
+
+<SpecTable data={[
+  {spec: "VOOC 3.0", value: "30 W", note: "OPPO ancienne génération"},
+  {spec: "SuperVOOC 2.0", value: "65 W", note: "0-100 % en 35 min (Find X2 Pro)"},
+  {spec: "SuperVOOC 120 W", value: "120 W", note: "0-100 % en 23 min (OPPO Find X5 Pro)"},
+  {spec: "SuperVOOC 240 W", value: "240 W", note: "0-100 % en 9 min (OPPO Find X6 Pro)"}
+]} />
+
+**Limitation majeure :** un chargeur SuperVOOC 240 W ne charge en 240 W **que** des téléphones SuperVOOC 240 W. Branché sur un iPhone ou un Samsung, il n'ira pas au-delà du USB PD standard.
+
+## Samsung Adaptive Fast Charge et Super Fast Charging
+
+Samsung utilise plusieurs protocoles selon les gammes :
+
+- **Adaptive Fast Charge (AFC)** : basé sur Qualcomm Quick Charge, présent sur la majorité des Galaxy. Un chargeur QC 3.0 tiers fonctionne bien.
+- **Super Fast Charging (25 W)** : à partir du Galaxy S21, sur USB-C PD 3.0 + PPS. Compatible avec les bons chargeurs tiers PPS.
+- **Super Fast Charging 2.0 (45 W)** : Galaxy S22+ et S23 Ultra uniquement. Nécessite le chargeur Samsung 45 W ou un tiers compatible 45 W PPS.
+
+<Callout type="warning">
+Samsung ne fournit plus de chargeur dans la boîte depuis le Galaxy S21. Si vous avez un S22+, S23 Ultra ou S24 Ultra, achetez bien un chargeur 45 W USB PD/PPS pour en exploiter la vitesse maximale.
+</Callout>
+
+## PPS : la charge adaptative qui protège la batterie
+
+PPS (Programmable Power Supply) est une extension de USB PD 3.0 qui permet au chargeur et au téléphone de négocier en temps réel la tension et l'intensité optimales, par paliers de 20 mV et 50 mA.
+
+**Avantages du PPS :**
+- Moins de chaleur dégagée (la batterie chauffe moins)
+- Charge plus rapide en fin de cycle
+- Meilleure longévité de la batterie sur le long terme
+
+PPS est intégré dans Quick Charge 4+ et est requis pour le Super Fast Charging 25 W de Samsung. Les meilleurs chargeurs GaN supportent PPS.
+
+## Quel protocole pour quel téléphone ?
+
+<SpecTable data={[
+  {spec: "iPhone 15 / 16", value: "USB PD", note: "N'importe quel chargeur USB-C PD 20-45 W"},
+  {spec: "Samsung Galaxy S24", value: "Super Fast Charging 25 W (PPS)", note: "Chargeur 25 W+ PD/PPS"},
+  {spec: "Samsung Galaxy S24 Ultra", value: "Super Fast Charging 2.0 (45 W PPS)", note: "Chargeur 45 W PD/PPS"},
+  {spec: "OnePlus 12", value: "SuperVOOC 100 W", note: "Chargeur OnePlus pour vitesse max, sinon USB PD"},
+  {spec: "Xiaomi 14 Pro", value: "HyperCharge 120 W", note: "Chargeur Xiaomi pour vitesse max"},
+  {spec: "Google Pixel 9", value: "USB PD 3.0 + PPS 30 W", note: "N'importe quel chargeur 30 W PD/PPS"}
+]} />
+
+## Conclusion : quel chargeur acheter ?
+
+Si vous voulez **un seul chargeur pour tout** : optez pour un **chargeur GaN USB-C avec USB PD 3.0 + PPS**. Il charge rapidement tous les smartphones, tablettes, MacBook et PC portables, sans avoir à vous soucier des protocoles.
+
+Si vous voulez la **vitesse maximale absolue** sur votre téléphone : achetez le chargeur officiel de la marque. C'est la seule façon de débloquer SuperVOOC 240 W, HyperCharge 120 W ou WARP 65 W.
+
+→ *Voir aussi : [USB Power Delivery expliqué en détail](/guides/usb-power-delivery-explication/) et [Chargeur GaN : guide complet](/chargeurs/chargeur-gan-guide/)*
