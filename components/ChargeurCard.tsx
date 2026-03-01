@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 type BadgeType = 'PC portable' | 'Smartphone' | 'Multi-ports' | 'Sans fil' | 'Accessoire';
@@ -10,6 +11,7 @@ interface ChargeurCardProps {
   description: string;
   date: string;
   badge: BadgeType;
+  cover?: string;
 }
 
 const badgeStyles: Record<BadgeType, string> = {
@@ -44,23 +46,37 @@ export function getBadgeFromSlug(slug: string, title: string): BadgeType {
   return 'Smartphone';
 }
 
-export function ChargeurCard({ slug, category, title, description, date, badge }: ChargeurCardProps) {
+export function ChargeurCard({ slug, category, title, description, date, badge, cover }: ChargeurCardProps) {
   return (
-    <li className="group rounded-2xl border border-border p-4 transition-shadow hover:shadow-soft">
-      <div className="mb-2">
-        <span className={clsx('inline-block rounded-full px-2.5 py-0.5 text-xs font-medium', badgeStyles[badge])}>
-          {badge}
-        </span>
-      </div>
-      <h2 className="text-lg font-semibold text-textStrong group-hover:text-primary transition-colors">
-        <Link href={`/${category}/${slug}`}>{title}</Link>
-      </h2>
-      <p className="mt-1 text-sm text-slate-600">
-        <span className="font-medium text-slate-500">En bref :</span> {truncateDescription(description)}
-      </p>
-      <div className="mt-3 text-xs text-slate-400">
-        {new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })}
-      </div>
+    <li className="group rounded-2xl border border-border bg-white overflow-hidden transition-all hover:shadow-soft">
+      <Link href={`/${category}/${slug}`} className="block h-full">
+        {cover && (
+          <div className="relative h-44 w-full overflow-hidden">
+            <Image
+              src={cover}
+              alt={title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        )}
+        <div className="p-4">
+          <div className="mb-2">
+            <span className={clsx('inline-block rounded-full px-2.5 py-0.5 text-xs font-medium', badgeStyles[badge])}>
+              {badge}
+            </span>
+          </div>
+          <h2 className="text-lg font-semibold text-textStrong group-hover:text-primary transition-colors">
+            {title}
+          </h2>
+          <p className="mt-1 text-sm text-slate-600">
+            <span className="font-medium text-slate-500">En bref :</span> {truncateDescription(description)}
+          </p>
+          <div className="mt-3 text-xs text-slate-400">
+            {new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })}
+          </div>
+        </div>
+      </Link>
     </li>
   );
 }

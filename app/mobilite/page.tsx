@@ -1,7 +1,6 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import Link from 'next/link';
-import Image from 'next/image';
+import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
 
 export const revalidate = 300;
@@ -18,11 +17,16 @@ export default function MobiliteIndex() {
         </div>
         <ul className="grid gap-6 md:grid-cols-3">
           {posts.map((p) => (
-            <li key={p.slug} className="rounded-2xl border border-border p-4 hover:shadow-soft">
-              <h2 className="text-lg font-semibold"><Link href={`/${p.category}/${p.slug}`} className="hover:text-primary">{p.title}</Link></h2>
-              <p className="mt-2 line-clamp-3 text-sm text-slate-700">{p.description}</p>
-              <div className="mt-3 text-xs text-slate-500">{new Date(p.date).toLocaleDateString('fr-FR')}</div>
-            </li>
+            <ArticleCard
+              key={p.slug}
+              slug={p.slug}
+              category={p.category}
+              title={p.title}
+              description={p.description}
+              date={p.date}
+              cover={p.cover}
+              readingTime={p.readingTime}
+            />
           ))}
         </ul>
         {posts.length === 0 && (

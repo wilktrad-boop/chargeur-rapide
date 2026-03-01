@@ -69,6 +69,7 @@ export default function ChargeursIndex() {
               description={p.description}
               date={p.date}
               badge={getBadgeFromSlug(p.slug, p.title)}
+              cover={p.cover}
             />
           ))}
         </ul>
