@@ -133,6 +133,9 @@ export default async function ArticlePage({ params }: Params) {
         </div>
       </main>
       <Footer />
+      {post.cta && (
+        <StickyCTA label={post.cta.label} url={post.cta.url} note={post.cta.note} />
+      )}
     </>
   );
 }
