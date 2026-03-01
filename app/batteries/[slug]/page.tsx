@@ -2,20 +2,18 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MDXContent } from '@/components/mdx/MDXContent';
 import { TableOfContents } from '@/components/mdx/TableOfContents';
-import { getPostBySlug, getAllPosts } from '@/lib/mdx';
+import { getPostBySlug, getCategoryPosts } from '@/lib/mdx';
 import { serializePost, extractHeadings } from '@/lib/mdx-render';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-
-export const dynamic = 'force-dynamic';
-export const dynamicParams = true;
+import { StickyCTA } from '@/components/StickyCTA';
 
 type Params = { params: { slug: string } };
 
 export async function generateStaticParams() {
-  return [];
+  return getCategoryPosts('batteries').map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -59,10 +57,26 @@ export default async function ArticlePage({ params }: Params) {
   const mdxSource = await serializePost(post);
   const headings = extractHeadings(post.content);
 
+  const siteUrl = 'https://www.chargeur-rapide.fr';
+  const articleUrl = `${siteUrl}/${post.category}/${post.slug}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': post.schemaType === 'HowTo' ? 'HowTo' : 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.updated ?? post.date,
+    url: articleUrl,
+    author: { '@type': 'Organization', name: 'Chargeur-Rapide', url: siteUrl },
+    publisher: { '@type': 'Organization', name: 'Chargeur-Rapide', url: siteUrl },
+    ...(post.cover ? { image: `${siteUrl}${post.cover}` } : {}),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main className="mx-auto max-w-6xl px-4">
+      <main className={`mx-auto max-w-6xl px-4${post.cta ? ' pb-24' : ''}`}>
         <div className="grid gap-8">
           <article>
             <div className="mb-8">

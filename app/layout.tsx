@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Inter, Newsreader } from 'next/font/google';
 import { site } from '@/config/site';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const newsreader = Newsreader({ subsets: ['latin'], variable: '--font-newsreader', display: 'swap' });
@@ -36,6 +37,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={`${inter.variable} ${newsreader.variable}`}>
       <body>
         {children}
+        <Script
+          src="https://app.rybbit.io/api/script.js"
+          data-site-id="349653be9586"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

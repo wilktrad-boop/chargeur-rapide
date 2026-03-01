@@ -18,7 +18,12 @@ export const FrontmatterSchema = z.object({
   readingTime: z.number().optional(),
   toc: z.boolean().default(true),
   schemaType: z.enum(['Article', 'HowTo', 'FAQPage']).default('Article'),
-  draft: z.boolean().optional()
+  draft: z.boolean().optional(),
+  cta: z.object({
+    label: z.string(),
+    url: z.string(),
+    note: z.string().optional(),
+  }).optional(),
 });
 
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;
