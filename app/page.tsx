@@ -51,7 +51,7 @@ export default function HomePage() {
         {/* Derniers articles */}
         <section className="my-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-bold text-textStrong">Derniers articles</h2>
+            <h2 className="text-3xl font-bold text-textStrong">Articles recommandés</h2>
             <Link href="/guides" className="text-primary hover:text-primary/80 font-medium transition-colors">
               Voir tous les articles →
             </Link>
