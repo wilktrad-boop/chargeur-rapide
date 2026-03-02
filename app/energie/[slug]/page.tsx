@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: Params) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main className={`mx-auto max-w-6xl px-4${post.cta ? ' pb-24' : ''}`}>
+      <main className="mx-auto max-w-6xl px-4 pb-24">
         <div className="grid gap-8">
           <article>
             <div className="mb-8">
@@ -133,9 +133,11 @@ export default async function ArticlePage({ params }: Params) {
         </div>
       </main>
       <Footer />
-      {post.cta && (
-        <StickyCTA label={post.cta.label} url={post.cta.url} note={post.cta.note} />
-      )}
+      <StickyCTA
+        label={post.cta?.label ?? 'Voir les prix sur Amazon'}
+        url={post.cta?.url ?? 'https://www.amazon.fr/?tag=willypaul3407-21'}
+        note={post.cta?.note}
+      />
     </>
   );
 }

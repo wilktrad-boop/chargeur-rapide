@@ -19,14 +19,14 @@ export function BuyButtons({ items }: BuyButtonsProps) {
             key={i}
             href={item.url}
             target="_blank"
-            rel={item.rel || 'noopener'}
-            className="flex items-center justify-between rounded-2xl border border-border bg-white p-4 hover:shadow-soft focus-ring"
+            rel={item.rel || 'nofollow noopener sponsored'}
+            className="flex items-center justify-between rounded-2xl bg-primary p-4 text-white hover:bg-primaryHover transition-colors focus-ring"
           >
             <div>
-              <div className="font-medium">{item.label}</div>
-              {item.note && <div className="text-sm text-slate-600">{item.note}</div>}
+              <div className="font-semibold">{item.label}</div>
+              {item.note && <div className="text-sm text-sky-100">{item.note}</div>}
             </div>
-            <span className="text-primary">→</span>
+            <span className="text-sky-200">→</span>
           </a>
         ))}
       </div>
