@@ -32,7 +32,7 @@ export function SpecTable({ data }: SpecTableProps) {
   headers.push('Note');
   
   return (
-    <div className="my-6 overflow-hidden rounded-2xl border border-border">
+    <div className="not-prose my-6 overflow-hidden rounded-2xl border border-border">
       <table className="w-full">
         <thead className="bg-bgSubtle">
           <tr>

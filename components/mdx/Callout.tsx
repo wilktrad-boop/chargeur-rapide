@@ -19,7 +19,7 @@ export function Callout({ type, children }: CalloutProps) {
   };
 
   return (
-    <div className={clsx('my-4 rounded-2xl border p-4', styles[type])}>
+    <div className={clsx('not-prose my-4 rounded-2xl border p-4', styles[type])}>
       <div className="flex items-start gap-3">
         <span className="text-lg">{icons[type]}</span>
         <div className="text-sm">{children}</div>

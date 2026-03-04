@@ -9,7 +9,7 @@ interface FAQProps {
 
 export function FAQ({ items }: FAQProps) {
   return (
-    <div className="my-6">
+    <div className="not-prose my-6">
       <h3 className="mb-4 text-xl font-semibold text-textStrong">Questions fréquentes</h3>
       <div className="space-y-3">
         {items.map((item, i) => (

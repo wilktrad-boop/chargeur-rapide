@@ -5,7 +5,7 @@ interface ProsConsProps {
 
 export function ProsCons({ pros, cons }: ProsConsProps) {
   return (
-    <div className="my-6 grid gap-4 md:grid-cols-2">
+    <div className="not-prose my-6 grid gap-4 md:grid-cols-2">
       <div className="rounded-2xl border border-accent/20 bg-accent/5 p-4">
         <h4 className="mb-3 font-semibold text-accent">✓ Avantages</h4>
         <ul className="space-y-2 text-sm">
