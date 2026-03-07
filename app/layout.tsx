@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     description: site.description,
     siteName: site.name
   },
-  twitter: { card: 'summary_large_image', creator: site.socials.twitter }
+  twitter: { card: 'summary_large_image', creator: site.socials.twitter },
+  other: { 'e13903c2ea': 'e13903c2eab9c774ba3333f298ff369f' },
 };
 
 export const viewport: Viewport = {
