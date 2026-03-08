@@ -16,10 +16,10 @@ export default function HomePage() {
     .filter((p) => !p.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   const guides = posts.filter((p) => p.category === 'guides').slice(0, 5);
-  const pinnedSlugs = ['perplexity-avis', 'wispr-flow-avis', 'iclosed-avis'];
+  const pinnedSlugs = ['chargeur-gan-guide', 'meilleure-batterie-externe-2025', 'cables-usb-c-choisir'];
   const featuredPosts = pinnedSlugs
     .map((slug) => posts.find((p) => p.slug === slug))
-    .filter(Boolean) as typeof posts;
+    .filter((p) => p && p.cover) as typeof posts;
 
   return (
     <>
@@ -160,6 +160,27 @@ export default function HomePage() {
               ) : null;
             })}
           </ul>
+        </section>
+
+        {/* Outils testés */}
+        <section className="my-8 pt-6 border-t border-border">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Outils testés par la rédaction</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {[
+              { href: '/entreprise/perplexity-avis', label: 'Perplexity AI' },
+              { href: '/entreprise/wispr-flow-avis', label: 'Wispr Flow' },
+              { href: '/entreprise/iclosed-avis', label: 'iClosed' },
+              { href: '/entreprise/emelia-avis', label: 'Emelia' },
+              { href: '/entreprise/rybbit-avis', label: 'Rybbit' },
+              { href: '/entreprise/superlist-avis', label: 'Superlist' },
+              { href: '/entreprise/textexpander-avis', label: 'TextExpander' },
+              { href: '/entreprise/waalaxy-vs-emelia', label: 'Waalaxy vs Emelia' },
+            ].map((tool) => (
+              <Link key={tool.href} href={tool.href} className="text-sm text-slate-500 hover:text-primary transition-colors">
+                {tool.label}
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* À propos */}
