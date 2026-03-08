@@ -125,6 +125,7 @@ export default function ContactPage() {
             {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
           </button>
         </form>
+        <p className="mt-8 text-sm text-slate-400">VERIRL</p>
       </main>
       <Footer />
     </>
