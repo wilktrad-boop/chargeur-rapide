@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'À propos',
+  description: "Chargeur-Rapide est un média français indépendant sur la charge, l'énergie mobile et la mobilité durable. Qui nous sommes et pourquoi ce projet.",
+  alternates: { canonical: '/a-propos' },
+};
 
 export default function AboutPage() {
   return (

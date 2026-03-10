@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Guides pratiques sur la charge',
+  description: "Guides pratiques sur la charge rapide, les batteries et la mobilité électrique. Comment charger plus vite, préserver sa batterie et choisir le bon matériel.",
+  alternates: { canonical: '/guides' },
+};
 
 export const revalidate = 300;
 

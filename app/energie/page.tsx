@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Énergie & innovation',
+  description: "Comprendre les innovations énergétiques : technologie GaN, solaire portable, efficacité énergétique. Articles techniques et accessibles.",
+  alternates: { canonical: '/energie' },
+};
 
 export const revalidate = 300;
 

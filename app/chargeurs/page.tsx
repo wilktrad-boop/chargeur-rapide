@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { QuickGuideCard } from '@/components/QuickGuideCard';
 import { RecommendationsSection } from '@/components/RecommendationsSection';
 import { ChargeurCard, getBadgeFromSlug } from '@/components/ChargeurCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Chargeurs USB-C et GaN',
+  description: "Comparatifs et guides d'achat pour chargeurs USB-C, GaN et multiports. Trouvez le chargeur rapide adapté à votre smartphone, PC portable ou tablette.",
+  alternates: { canonical: '/chargeurs' },
+};
 
 export const revalidate = 300;
 

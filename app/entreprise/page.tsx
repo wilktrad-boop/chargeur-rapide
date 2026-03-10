@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Outils & plateformes pour entrepreneurs',
+  description: 'Avis et comparatifs des meilleurs outils SaaS pour entrepreneurs : prospection, analytics, productivité. Tests réels, tarifs et alternatives.',
+  alternates: { canonical: '/entreprise' },
+};
 
 export const revalidate = 300;
 

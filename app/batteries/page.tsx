@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Batteries externes et stations portables',
+  description: "Comparatifs de batteries externes, power banks et stations d'énergie portables. Charge rapide, grande capacité, solaire — guide d'achat complet.",
+  alternates: { canonical: '/batteries' },
+};
 
 export const revalidate = 300;
 

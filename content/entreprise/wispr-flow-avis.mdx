@@ -74,6 +74,8 @@ L'installation prend moins de 5 minutes :
 
 La courbe d'apprentissage est quasi nulle. Dès la première dictée, le résultat est utilisable. Les 2-3 premiers jours, on prend l'habitude de dicter plutôt que de taper. Après une semaine, difficile de s'en passer.
 
+![Wispr Flow — écran de démarrage après installation](/images/wispr%20flow_startnow.png)
+
 ## Performances et qualité de transcription en français
 
 C'est le point clé, et la bonne nouvelle : **Wispr Flow est excellent en français**. Dans mon test, j'ai dicté des emails professionnels, des articles, des messages Slack et des documents techniques.
@@ -105,6 +107,14 @@ Wispr Flow détecte automatiquement la langue et bascule d'une langue à l'autre
 
 Vous pouvez ajouter des noms propres, des termes techniques, des noms de clients que Wispr Flow devra systématiquement bien retranscrire.
 
+### Le dictionnaire personnel
+
+Wispr Flow intègre un dictionnaire personnel qui apprend votre vocabulaire au fil du temps. Vous pouvez y ajouter manuellement des entrées : acronymes métier, noms de clients, termes techniques rares, marques. L'outil les retranscrira ensuite correctement sans hésitation.
+
+![Wispr Flow — interface du dictionnaire personnel](/images/wisprflow_dictionary.png)
+
+C'est particulièrement utile si vous travaillez dans un secteur avec du jargon spécialisé (médical, juridique, tech) ou si vous dictez régulièrement des noms propres que le modèle de base ne connaît pas.
+
 <ProsCons
   pros={[
     "Qualité de transcription en français exceptionnelle",
@@ -126,11 +136,13 @@ Vous pouvez ajouter des noms propres, des termes techniques, des noms de clients
 
 <SpecTable data={[
   {spec: "Essai gratuit", value: "15 jours", note: "Accès complet, sans carte bancaire"},
-  {spec: "Plan Individual (annuel)", value: "~10 $/mois", note: "Facturation annuelle"},
-  {spec: "Plan Individual (mensuel)", value: "~16 $/mois", note: "Facturation mensuelle"},
-  {spec: "Plan Pro", value: "~20 $/mois", note: "Historique étendu, features avancées"},
-  {spec: "Plan Business", value: "Sur devis", note: "Multi-utilisateurs, SSO"}
+  {spec: "Plan Pro (annuel)", value: "12 €/mois", note: "Facturation annuelle — le plus populaire"},
+  {spec: "Plan Pro (mensuel)", value: "15 €/mois", note: "Facturation mensuelle"},
+  {spec: "Plan Entreprise (annuel)", value: "24 €/mois", note: "Multi-utilisateurs, SSO, conformité"},
+  {spec: "Plan Entreprise (mensuel)", value: "25 €/mois", note: "Facturation mensuelle"}
 ]} />
+
+![Wispr Flow — page de facturation avec les plans mensuels](/images/wisprflow_billing.png)
 
 **Comment annuler ?** Depuis les paramètres de votre compte Wispr Flow > Subscription > Cancel plan. La résiliation prend effet à la fin de la période en cours, sans frais supplémentaires.
 
@@ -143,6 +155,30 @@ Wispr Flow traite la voix côté serveur. En l'absence de connexion internet ou 
 ### Prix
 
 À ~120 $/an, Wispr Flow n'est pas donné. Pour un usage occasionnel, la dictée native de macOS ou iOS peut suffire. L'investissement se justifie à partir de 2-3 heures de frappe quotidienne.
+
+## Vie privée et sécurité des données
+
+C'est un point que beaucoup d'avis éludent, et pourtant il mérite attention.
+
+Wispr Flow **traite l'audio côté serveur** — votre voix est envoyée dans le cloud pour être transcrite. En 2025, la société a fait face à une controverse sur ses pratiques de rétention de données après des discussions sur Reddit. Depuis, Wispr Flow a communiqué officiellement sur sa politique : les données audio ne sont pas conservées après transcription sur les plans individuels, et le plan Entreprise dispose d'une option **zero data retention** (aucune donnée ne transite ou n'est stockée).
+
+Points à retenir :
+- **Plan Pro** : données non conservées après traitement, pas d'entraînement sur vos dictées
+- **Plan Entreprise** : zero data retention, conformité SOC 2, déploiement possible sur instance dédiée
+- **Pas de traitement local** : si vous dictez des données sensibles (médical, juridique, confidentiel), regardez les alternatives avec traitement on-device comme Superwhisper
+
+Si la confidentialité est critique pour vous, le plan Entreprise ou une alternative locale s'impose.
+
+## Consommation de ressources
+
+Wispr Flow tourne en arrière-plan en permanence, ce qui a un coût :
+
+- **RAM** : environ 600-800 Mo en utilisation normale
+- **CPU** : quasi nul au repos, pic bref lors de chaque transcription
+- **Démarrage** : 8 à 10 secondes au lancement de l'app
+- **Réseau** : dépendant de la connexion — en Wi-Fi stable, aucun délai perceptible ; en 4G ou réseau dégradé, légère latence
+
+Sur un Mac avec 8 Go de RAM c'est perceptible si vous avez déjà Chrome, Notion et Slack ouverts. Sur 16 Go, aucun problème en pratique.
 
 ## Wispr Flow vs Superwhisper, VoiceInk et les alternatives
 

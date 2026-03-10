@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ArticleCard } from '@/components/ArticleCard';
 import { getCategoryPosts } from '@/lib/mdx';
+
+export const metadata: Metadata = {
+  title: 'Mobilité électrique',
+  description: 'Guides et comparatifs sur la mobilité électrique : trottinettes, vélos électriques, bornes de recharge et infrastructures. Tout pour rouler propre.',
+  alternates: { canonical: '/mobilite' },
+};
 
 export const revalidate = 300;
 
