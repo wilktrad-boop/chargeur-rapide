@@ -27,6 +27,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/a-propos" className="hover:text-primary">Le média</Link></li>
             <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
+            <li><Link href="/mentions-legales" className="hover:text-primary">Mentions légales</Link></li>
           </ul>
         </div>
       </div>
