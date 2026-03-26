@@ -60,10 +60,11 @@ export default async function ArticlePage({ params }: Params) {
 
   const siteUrl = 'https://www.chargeur-rapide.fr';
   const articleUrl = `${siteUrl}/${post.category}/${post.slug}`;
+  const isReview = post.schemaType === 'Review';
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': post.schemaType === 'HowTo' ? 'HowTo' : 'Article',
-    headline: post.title,
+    '@type': isReview ? 'Review' : (post.schemaType === 'HowTo' ? 'HowTo' : 'Article'),
+    ...(isReview ? { name: post.title } : { headline: post.title }),
     description: post.description,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
@@ -71,6 +72,18 @@ export default async function ArticlePage({ params }: Params) {
     author: { '@type': 'Organization', name: 'Chargeur-Rapide', url: siteUrl },
     publisher: { '@type': 'Organization', name: 'Chargeur-Rapide', url: siteUrl },
     ...(post.cover ? { image: `${siteUrl}${post.cover}` } : {}),
+    ...(isReview && post.ratingValue ? {
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: post.ratingValue,
+        bestRating: '5',
+        worstRating: '1',
+      },
+      itemReviewed: {
+        '@type': 'SoftwareApplication',
+        name: post.title.split(':')[0].replace(' avis 2026', '').replace(' 2026', '').trim(),
+      },
+    } : {}),
   };
 
   return (

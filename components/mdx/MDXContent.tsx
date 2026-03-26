@@ -5,6 +5,7 @@ import { Callout } from './Callout';
 import { SpecTable } from './SpecTable';
 import { FAQ } from './FAQ';
 import { BuyButtons } from './BuyButtons';
+import { Rating } from './Rating';
 
 const components = {
   ProsCons,
@@ -12,6 +13,7 @@ const components = {
   SpecTable,
   FAQ,
   BuyButtons,
+  Rating,
 };
 
 interface MDXContentProps {

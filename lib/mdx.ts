@@ -17,7 +17,8 @@ export const FrontmatterSchema = z.object({
   cover: z.string().optional(),
   readingTime: z.number().optional(),
   toc: z.boolean().default(true),
-  schemaType: z.enum(['Article', 'HowTo', 'FAQPage']).default('Article'),
+  schemaType: z.enum(['Article', 'HowTo', 'FAQPage', 'Review']).default('Article'),
+  ratingValue: z.number().optional(),
   draft: z.boolean().optional(),
   cta: z.object({
     label: z.string(),
