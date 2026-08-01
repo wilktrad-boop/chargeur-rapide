@@ -6,6 +6,9 @@ import { SpecTable } from './SpecTable';
 import { FAQ } from './FAQ';
 import { BuyButtons } from './BuyButtons';
 import { Rating } from './Rating';
+import { Produit } from './Produit';
+import { Comparatif } from './Comparatif';
+import { DisclosureAffiliation } from './DisclosureAffiliation';
 
 const components = {
   ProsCons,
@@ -14,6 +17,9 @@ const components = {
   FAQ,
   BuyButtons,
   Rating,
+  Produit,
+  Comparatif,
+  DisclosureAffiliation,
 };
 
 interface MDXContentProps {

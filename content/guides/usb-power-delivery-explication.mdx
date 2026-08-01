@@ -19,6 +19,21 @@ schemaType: "Article"
 
 En résumé : c'est le protocole qui explique pourquoi votre chargeur de MacBook peut aussi charger votre iPhone, et vice-versa.
 
+<DisclosureAffiliation />
+
+<Produit
+  titre="Chargeur GaN 65 W multiport USB-C Power Delivery"
+  recherche="chargeur GaN 65W multiport USB-C PD"
+  prix="~35-50 €"
+  points={[
+    "Puissance suffisante pour un smartphone à pleine vitesse et un laptop léger en simultané",
+    "Format GaN compact malgré 2 à 3 ports (USB-C + USB-A selon modèles)",
+    "Bon compromis polyvalence/prix pour qui veut un seul chargeur pour tout",
+    "Sur certains modèles, la puissance se partage entre les ports actifs — vérifier la répartition annoncée"
+  ]}
+  badge="Notre choix"
+/>
+
 <Callout type="info">
 USB PD est le seul standard de charge rapide **vraiment universel**. Contrairement au Quick Charge de Qualcomm (réservé aux puces Qualcomm) ou au SuperDart de OnePlus (propriétaire), l'USB PD fonctionne avec n'importe quel appareil qui l'intègre, quelle que soit la marque.
 </Callout>
@@ -76,12 +91,59 @@ Intégré dans USB PD 3.0, le **PPS** permet des ajustements de tension en pas d
   {spec: "PC portable Dell/HP", value: "65-130 W (PD 3.0)", note: "Selon modèle"}
 ]} />
 
+## Quel chargeur USB PD choisir selon votre usage ?
+
+Une fois le principe compris, reste à choisir le bon palier de puissance. Notre guide [[charge-30w-65w-100w]] détaille les usages adaptés à chaque watt ; voici un comparatif rapide des trois profils les plus courants.
+
+<Comparatif produits={[
+  {
+    titre: "Chargeur USB-C 30 W Power Delivery GaN",
+    note: 4,
+    prix: "~15-20 €",
+    pour: ["Format très compact, facile à glisser dans une trousse", "Suffisant pour charger rapidement un smartphone récent", "Prix accessible"],
+    contre: ["Un seul port sur la plupart des modèles", "Trop juste pour un laptop, même léger"],
+    recherche: "chargeur USB-C 30W Power Delivery GaN"
+  },
+  {
+    titre: "Chargeur GaN 65 W multiport USB-C PD",
+    note: 4.5,
+    prix: "~35-50 €",
+    pour: ["Charge un smartphone à pleine vitesse et dépanne un laptop léger", "Plusieurs ports pour limiter le nombre de chargeurs à transporter", "Bon rapport polyvalence/encombrement"],
+    contre: ["Puissance parfois partagée entre les ports actifs", "Insuffisant pour les laptops gourmands (15\" gaming ou station de travail)"],
+    recherche: "chargeur GaN 65W multiport USB-C PD",
+    badge: "Notre choix"
+  },
+  {
+    titre: "Chargeur USB-C 100 W Power Delivery GaN",
+    note: 4,
+    prix: "~45-65 €",
+    pour: ["Charge la plupart des laptops 13-16\" à pleine puissance", "Un seul chargeur pour smartphone, tablette et laptop", "Généralement multiport sur les modèles récents"],
+    contre: ["Plus volumineux et plus cher que les paliers inférieurs", "Nécessite un câble certifié 5 A / 100 W pour exploiter la pleine puissance", "Surdimensionné si vous n'avez qu'un smartphone à charger"],
+    recherche: "chargeur USB-C 100W Power Delivery GaN"
+  }
+]} />
+
+Pour aller plus loin sur le choix du câble et des ports adaptés à un chargeur multi-appareils, voir aussi notre guide [[chargeur-usb-c-65w]].
+
 ## Comment identifier un chargeur USB PD ?
 
 Cherchez sur l'étiquette du chargeur ou dans la fiche produit :
 - La mention explicite **"USB PD"** ou **"Power Delivery"**
 - Des profils de tension multiples (ex : 5V/3A, 9V/3A, 15V/3A, 20V/3A)
 - Le logo USB-IF sur les produits certifiés
+
+Si vous devez aussi alimenter un laptop en plus de votre smartphone, un chargeur 100 W couvre la quasi-totalité des usages :
+
+<Produit
+  titre="Chargeur USB-C 100 W Power Delivery GaN"
+  recherche="chargeur USB-C 100W Power Delivery GaN"
+  prix="~45-65 €"
+  points={[
+    "Charge la plupart des laptops 13-16\" à pleine puissance, en plus du smartphone",
+    "Un seul chargeur pour tout le foyer ou le sac de voyage",
+    "Prévoir un câble certifié 5 A / 100 W pour exploiter la pleine puissance"
+  ]}
+/>
 
 ## FAQ
 
