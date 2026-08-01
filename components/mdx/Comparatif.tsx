@@ -17,6 +17,7 @@ interface ComparatifProps {
 }
 
 export function Comparatif({ produits }: ComparatifProps) {
+  const hasNotes = produits.some((p) => typeof p.note === 'number');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': produits
@@ -74,6 +75,12 @@ export function Comparatif({ produits }: ComparatifProps) {
           </tbody>
         </table>
       </div>
+      {hasNotes && (
+        <p className="mt-2 text-xs text-textMain">
+          Notes attribuées par notre rédaction d'après l'analyse des caractéristiques et de la réputation des
+          produits, sans test en laboratoire.
+        </p>
+      )}
       {jsonLd['@graph'].length > 0 && (
         <script
           type="application/ld+json"
