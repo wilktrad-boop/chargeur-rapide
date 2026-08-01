@@ -15,6 +15,23 @@ schemaType: "Article"
 
 ## Types de batteries pour vélos électriques
 
+Le choix de la batterie est la décision la plus structurante lors de l'achat d'un vélo électrique ou du remplacement d'un pack usé : elle détermine l'autonomie réelle, le poids et le budget. Avant tout achat, vérifiez impérativement la **tension** (24V, 36V ou 48V), le **connecteur** et la compatibilité avec votre moteur et votre cadre — un pack incompatible peut endommager le contrôleur.
+
+<DisclosureAffiliation />
+
+<Produit
+  titre="Batterie vélo électrique 36V compatible"
+  recherche="batterie vélo électrique 36V"
+  prix="~300-500 €"
+  points={[
+    "Tension 36V : le standard le plus répandu sur les VAE du marché",
+    "Vérifiez impérativement le connecteur, l'ampérage (Ah) et le fixe-batterie avant commande",
+    "Compatible avec de nombreux moteurs, mais pas universel — consultez la fiche technique de votre vélo",
+    "Ne remplace pas systématiquement un pack d'origine constructeur (Bosch, Shimano, Yamaha) en cas de doute"
+  ]}
+  badge="Notre choix"
+/>
+
 ### Lithium-ion (Li-ion)
 Standard actuel, équilibre optimal entre poids, autonomie et durée de vie.
 
@@ -85,11 +102,45 @@ L'autonomie réelle est généralement 20-30 % inférieure aux valeurs construct
 - Surchauffe lors de la charge
 - Gonflement de la batterie
 
-<BuyButtons items={[
-  {label: "Bosch PowerPack 500", url: "https://amazon.fr", note: "Qualité allemande"},
-  {label: "Shimano BT-E8016", url: "https://fnac.com", note: "Autonomie exceptionnelle"},
-  {label: "Yamaha PW-X2", url: "https://darty.com", note: "Rapport qualité/prix"}
+Pour un chargeur adapté à votre pack, voir notre guide dédié [[chargeur-velo-electrique]]. Et pour les erreurs à éviter avec toute batterie Li-ion, consultez [[erreurs-batteries]].
+
+## 36V ou 48V : quelle capacité choisir pour remplacer votre batterie ?
+
+Le remplacement d'une batterie usée est l'occasion de revoir la tension à la hausse — à condition que le contrôleur du vélo le supporte. Comparatif des deux options les plus courantes :
+
+<Comparatif produits={[
+  {
+    titre: "Batterie vélo électrique 36V (~500 Wh)",
+    note: 4,
+    prix: "~300-500 €",
+    pour: ["Compatible avec la majorité des VAE grand public", "Prix plus abordable", "Poids contenu (~2,5 kg)"],
+    contre: ["Autonomie plus limitée qu'un pack 48V", "Vérifier impérativement le connecteur d'origine avant achat"],
+    recherche: "batterie vélo électrique 36V"
+  },
+  {
+    titre: "Batterie VAE 48V compatible",
+    note: 3.5,
+    prix: "~500-900 €",
+    pour: ["Autonomie et couple supérieurs, utile en usage intensif ou vélo cargo", "Recharge proportionnellement plus rapide en Wh/h"],
+    contre: ["Incompatible avec un contrôleur 36V — à ne jamais brancher sans confirmation du constructeur", "Plus lourd et plus cher"],
+    recherche: "batterie VAE 48V compatible"
+  }
 ]} />
+
+<Callout type="warning">
+Ne jamais installer une batterie 48V sur un vélo conçu pour du 36V (ou l'inverse) : la tension doit correspondre exactement à celle du contrôleur d'origine, sous peine de casse électronique. En cas de doute, contactez le fabricant du vélo.
+</Callout>
+
+<Produit
+  titre="Chargeur batterie vélo électrique 42V"
+  recherche="chargeur batterie vélo électrique 42V"
+  prix="~40-70 €"
+  points={[
+    "Tension de sortie 42V pour recharger un pack nominal 36V — le format le plus courant",
+    "Vérifiez le connecteur (rond, XLR...) et l'ampérage avant achat : un chargeur trop faible rallonge fortement la charge",
+    "Un chargeur non certifié CE peut endommager le BMS de la batterie — privilégier une marque reconnue"
+  ]}
+/>
 
 ## FAQ
 
