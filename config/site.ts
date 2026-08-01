@@ -10,7 +10,6 @@ export const site = {
     { label: 'Chargeurs', href: '/chargeurs' },
     { label: 'Batteries', href: '/batteries' },
     { label: 'Mobilité', href: '/mobilite' },
-    { label: 'Énergie', href: '/energie' },
     { label: 'Guides', href: '/guides' },
     { label: 'Entreprise', href: '/entreprise' },
     { label: 'À propos', href: '/a-propos' },

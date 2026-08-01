@@ -49,6 +49,18 @@ export default function GuidesIndex() {
   const choiceGuides = getGuidesByTheme(guidesByTheme.choisir);
   const mobilityGuides = getGuidesByTheme(guidesByTheme.mobilite);
 
+  // Pages énergie conservées, à surfacer en "À lire aussi" (URLs /energie/... inchangées)
+  const energiePosts = getCategoryPosts('energie');
+  const energieSlugs = [
+    'innovation-gan-electronique',
+    'gan-vs-silicium',
+    'solaire-portable-technologies',
+    'efficacite-energetique-optimiser',
+  ];
+  const energieGuides = energieSlugs
+    .map(slug => energiePosts.find(p => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => p !== undefined);
+
   // Guides pour le parcours débutant
   const starterGuides = [
     posts.find(p => p.slug === 'fonctionnement-chargeur-rapide'),
@@ -167,6 +179,20 @@ export default function GuidesIndex() {
                 ))}
               </ol>
             </div>
+          </section>
+        )}
+
+        {/* Section "À lire aussi" – pages énergie conservées */}
+        {energieGuides.length > 0 && (
+          <section className="my-12">
+            <h2 className="text-2xl font-semibold text-textStrong mb-6">
+              À lire aussi
+            </h2>
+            <ul className="grid gap-6 md:grid-cols-2">
+              {energieGuides.map((p) => (
+                <ArticleCard key={p.slug} slug={p.slug} category={p.category} title={p.title} description={p.description} date={p.date} cover={p.cover} readingTime={p.readingTime} label="Énergie" />
+              ))}
+            </ul>
           </section>
         )}
 
