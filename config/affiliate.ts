@@ -14,3 +14,6 @@ export function amazonSearchUrl(query: string, subid?: string): string {
   if (subid) params.set('ascsubtag', subid);
   return `${AMAZON_HOST}/s?${params.toString()}`;
 }
+
+/** URL Amazon.fr taggée par défaut (repli du CTA flottant quand la page ne définit pas de `cta`). */
+export const AMAZON_FALLBACK_URL = amazonSearchUrl('chargeur rapide');

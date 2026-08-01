@@ -21,7 +21,7 @@ export function StickyCTA({ label, url, note }: Props) {
           <a
             href={url}
             target="_blank"
-            rel="nofollow noopener sponsored"
+            rel="sponsored nofollow noopener noreferrer"
             className="shrink-0 bg-white text-primary px-6 py-2.5 rounded-2xl text-sm font-semibold hover:bg-sky-50 transition-colors"
           >
             {label}
