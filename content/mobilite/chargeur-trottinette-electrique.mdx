@@ -17,6 +17,25 @@ schemaType: "Article"
 
 Charger une trottinette électrique est simple, mais quelques règles permettent d'éviter d'endommager la batterie et de prolonger sa durée de vie.
 
+<DisclosureAffiliation />
+
+<Produit
+  titre="Chargeur trottinette électrique 42V 2A"
+  recherche="chargeur trottinette électrique 42V 2A"
+  prix="~20-40 €"
+  points={[
+    "Tension de sortie 42V pour batterie nominale 36V — le format le plus courant",
+    "Compatible avec la majorité des trottinettes d'entrée/milieu de gamme (connecteur XLR à vérifier)",
+    "Toujours contrôler tension de sortie, ampérage et connecteur avant achat",
+    "Certification CE indispensable pour la sécurité"
+  ]}
+  badge="Notre choix"
+/>
+
+<Callout type="warning">
+Vérifiez impérativement la tension de sortie (Output) et le connecteur de votre chargeur d'origine avant d'acheter un remplacement ou un chargeur universel. Une tension incompatible peut endommager la batterie ou présenter un risque d'incendie.
+</Callout>
+
 1. **Laisser refroidir la trottinette** 15 à 20 minutes après une utilisation intensive avant de brancher le chargeur.
 2. **Brancher le chargeur sur la prise secteur en premier**, puis connecter le câble à la trottinette.
 3. **Vérifier que le voyant de charge s'allume** — rouge ou orange en cours de charge selon les modèles.
@@ -129,13 +148,48 @@ Un chargeur universel est acceptable si :
 - Recharger à température ambiante (10-30 °C), jamais directement après utilisation intensive
 - Pour préserver la batterie au quotidien : charger entre 20 % et 80 %, pas systématiquement à 100 %
 
-## Chargeurs recommandés sur Amazon
+## Chargeurs recommandés
 
-<BuyButtons items={[
-  {label: "Chargeur Xiaomi M365 / trottinette 36V", url: "https://www.amazon.fr/s?k=chargeur+trottinette+36v+42v&tag=willypaul3407-21", note: "42 V / 2 A — le plus courant"},
-  {label: "Chargeur trottinette 48V universel", url: "https://www.amazon.fr/s?k=chargeur+trottinette+48v+54v&tag=willypaul3407-21", note: "54,6 V / 2 A — Ninebot MAX, Segway"},
-  {label: "Prise programmable pour charge nocturne", url: "https://www.amazon.fr/s?k=prise+programmable+minuterie&tag=willypaul3407-21", note: "Coupe automatiquement après X heures"}
+<Comparatif produits={[
+  {
+    titre: "Chargeur trottinette Xiaomi 42V 2A",
+    note: 4,
+    prix: "~20-35 €",
+    pour: ["Format le plus répandu, compatible Xiaomi M365 et nombreux modèles génériques", "Connecteur XLR standard", "Prix accessible"],
+    contre: ["Vérifier le connecteur exact (XLR vs GX16) avant achat", "Ampérage limité à 2A, pas de charge rapide"],
+    recherche: "chargeur trottinette Xiaomi 42V",
+    badge: "Notre choix"
+  },
+  {
+    titre: "Chargeur trottinette 54,6V (pour batterie 48V)",
+    note: 3.5,
+    prix: "~25-45 €",
+    pour: ["Adapté aux modèles milieu/haut de gamme (Ninebot MAX, Segway)", "Souvent disponible avec plusieurs ampérages"],
+    contre: ["Ne jamais utiliser sur une batterie 36V — tension incompatible", "Certification CE à vérifier systématiquement"],
+    recherche: "chargeur trottinette 54,6V"
+  },
+  {
+    titre: "Chargeur trottinette électrique 42V 2A universel",
+    note: 3.5,
+    prix: "~18-30 €",
+    pour: ["Bonne option de secours ou seconde batterie", "Format compact pour le transport"],
+    contre: ["Pas de coupure automatique garantie sur tous les modèles — vérifier avant charge nocturne", "Qualité de fabrication variable"],
+    recherche: "chargeur trottinette électrique 42V 2A"
+  }
 ]} />
+
+Pour aller plus loin sur l'autonomie et le remplacement de la batterie, voir notre guide [[trottinette-electrique-guide]]. Les principes de tension et de connecteur sont également très proches de ceux du [[chargeur-velo-electrique]].
+
+<Produit
+  titre="Prise programmable pour charge nocturne sécurisée"
+  recherche="prise programmable minuterie charge"
+  prix="~10-20 €"
+  points={[
+    "Coupe automatiquement l'alimentation après la durée programmée",
+    "Utile si votre chargeur n'a pas de coupure automatique intégrée",
+    "Solution simple pour sécuriser une charge sans surveillance"
+  ]}
+/>
 
 ## FAQ
 
