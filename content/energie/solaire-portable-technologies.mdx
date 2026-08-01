@@ -15,6 +15,21 @@ schemaType: "Article"
 
 ## Technologies de panneaux solaires portables
 
+<DisclosureAffiliation />
+
+<Produit
+  titre="Panneau solaire portable USB-C pliable"
+  recherche="panneau solaire portable USB-C"
+  prix="~60-120 €"
+  points={[
+    "Sortie USB-C directe pour recharger smartphone, batterie externe ou petits appareils",
+    "Format pliable pratique en randonnée ou en camping",
+    "Rendement réel dépendant fortement de l'ensoleillement et de l'orientation",
+    "Vérifiez la puissance annoncée et la compatibilité PD avant achat"
+  ]}
+  badge="Notre choix"
+/>
+
 ### Silicium monocristallin
 - **Rendement** : 18-22 %
 - **Avantages** : Haute efficacité, durée de vie longue
@@ -57,6 +72,30 @@ Les panneaux pliables 20-40 W sont idéaux pour maintenir un smartphone chargé 
 - Fonctionnement par temps nuageux
 - Résistance aux intempéries
 
+Pour un usage vanlife ou en cas de coupure prolongée, une station électrique portable associée à un panneau solaire offre une bien meilleure autonomie qu'un simple chargeur solaire :
+
+<Comparatif produits={[
+  {
+    titre: "Station électrique portable solaire (batterie + panneau compatible)",
+    note: 4.5,
+    prix: "~300-700 €",
+    pour: ["Autonomie pour plusieurs appareils simultanés (220V, USB, 12V)", "Rechargeable au secteur, en voiture ou au solaire", "Utile aussi en coupure de courant à la maison"],
+    contre: ["Investissement conséquent", "Poids et encombrement à prévoir pour le transport"],
+    recherche: "station électrique portable solaire",
+    badge: "Meilleure autonomie"
+  },
+  {
+    titre: "Chargeur solaire pliable 100 W",
+    note: 4,
+    prix: "~130-220 €",
+    pour: ["Puissance suffisante pour recharger une station ou une batterie externe rapidement", "Pliable, transportable en randonnée ou camping", "Bon compromis poids/puissance"],
+    contre: ["Rendement très dépendant de l'ensoleillement réel", "Nécessite un contrôleur MPPT compatible pour une charge optimale"],
+    recherche: "chargeur solaire pliable 100W"
+  }
+]} />
+
+Pour approfondir le choix d'une batterie solaire pliable ou d'une station dédiée, voir aussi [[batterie-solaire-pliable]] et [[station-solaire-portable]].
+
 ## Optimisation de l'efficacité
 
 ### Orientation et inclinaison
@@ -94,11 +133,16 @@ Les panneaux pliables 20-40 W sont idéaux pour maintenir un smartphone chargé 
 - Indicateurs de charge
 - Connexion USB/12V/220V
 
-<BuyButtons items={[
-  {label: "Panneau solaire pliable", url: "https://amazon.fr", note: "Portabilité optimale"},
-  {label: "Station solaire portable", url: "https://fnac.com", note: "Autonomie complète"},
-  {label: "Chargeur solaire compact", url: "https://darty.com", note: "Usage quotidien"}
-]} />
+<Produit
+  titre="Chargeur solaire pliable 100 W"
+  recherche="chargeur solaire pliable 100W"
+  prix="~130-220 €"
+  points={[
+    "Puissance suffisante pour recharger une batterie externe ou une station rapidement",
+    "Pliable et transportable pour un usage nomade",
+    "Contrôleur MPPT recommandé pour optimiser le rendement réel"
+  ]}
+/>
 
 ## FAQ
 
