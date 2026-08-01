@@ -11,9 +11,12 @@
 ## Global Constraints
 
 - **Tag Amazon :** `rapide01-21` — marché **amazon.fr** uniquement.
-- **Forme d'URL affiliée :** `https://www.amazon.fr/dp/{ASIN}?tag=rapide01-21&language=fr_FR` (construite via `amazonUrl()`, jamais en dur).
+- **Forme d'URL affiliée (AMENDÉ 2026-08-01) :** liens de **recherche taggés** —
+  `https://www.amazon.fr/s?k={requête}&tag=rapide01-21`, construits via `amazonSearchUrl()`, jamais en dur.
+  (Les outils ne permettent pas de vérifier des ASIN amazon.fr ; décision Willy = liens de recherche.
+  Le prop `asin` + `amazonUrl()` restent disponibles dans les composants pour un remplacement produit ultérieur.)
 - **Attributs des liens sortants :** `target="_blank"` + `rel="sponsored nofollow noopener noreferrer"`.
-- **ASIN :** uniquement des ASIN **réels et vérifiés** sur amazon.fr (fetch de la fiche produit). Aucun ASIN inventé.
+- **Aucun ASIN inventé.** Ne pas coder d'ASIN non vérifié. Utiliser des requêtes de recherche descriptives.
 - **Disclosure :** `<DisclosureAffiliation />` visible en haut de toute page monétisée.
 - **Avis honnêtes :** pros ET cons pour chaque produit (playbook affiliation).
 - **Pas de nouvelle dépendance npm.** Enregistrer tout nouveau composant MDX dans la map de `components/mdx/MDXContent.tsx` (même schéma que `BuyButtons`).
@@ -26,8 +29,8 @@
 Chaque page monétisée suit ce gabarit, dans cet ordre :
 
 1. En haut de l'article (après le H1/intro), insérer `<DisclosureAffiliation />`.
-2. **Recherche produits** : identifier 1 à 3 produits Amazon.fr correspondant exactement à l'intention de la page (best-sellers actuels, bien notés). Pour chacun : `WebSearch` puis `WebFetch` de la fiche `amazon.fr/dp/{ASIN}` pour **confirmer** ASIN + titre + disponibilité.
-3. Insérer un `<Comparatif>` (si ≥ 2 produits) OU des `<Produit>` individuels, avec pour chaque produit : titre réel, prix indicatif, 2-4 arguments, 1 point faible honnête.
+2. **Recommandation produits** : identifier 1 à 3 modèles/types de produits pertinents pour l'intention de la page (marques et gammes connues, ex. « Samsung 45W EP-T4510 », « UGREEN Nexode 65W »). **Pas de recherche/vérification d'ASIN** (impossible via les outils) : chaque produit est branché via une **requête de recherche** descriptive passée au prop `recherche` des composants (CTA = lien de recherche amazon.fr taggé).
+3. Insérer un `<Comparatif>` (si ≥ 2 produits) OU des `<Produit>` individuels, avec pour chaque produit : titre du modèle recommandé, prix indicatif (fourchette), 2-4 arguments, 1 point faible honnête, et `recherche="..."` (mots-clés menant au produit sur amazon.fr).
 4. **3 CTA** répartis : un bloc produit haut (après l'intro), un milieu d'article, un `<Comparatif>` ou CTA final en bas.
 5. Maillage interne : 1-2 liens `[[slug]]` vers des pages complémentaires du site.
 6. S'assurer que le frontmatter a `schemaType: "Review"` si la page est centrée sur un produit comparé (sinon laisser `Article`) — le schema Review est émis par `<Comparatif>`.
@@ -37,7 +40,7 @@ Chaque page monétisée suit ce gabarit, dans cet ordre :
 - `npx tsc --noEmit` propre.
 - `npm run build` réussit.
 - Lancer `npm run start`, ouvrir la page, confirmer visuellement : disclosure présente, 3 CTA, cartes produit.
-- `curl -s http://localhost:3000/{cat}/{slug} | grep -o 'amazon.fr/dp/[A-Z0-9]*?tag=rapide01-21'` → renvoie les liens taggés attendus.
+- `curl -s http://localhost:3000/{cat}/{slug} | grep -o 'amazon.fr/s?[^"]*tag=rapide01-21' | sort -u` → renvoie les liens de recherche taggés attendus.
 
 ---
 
@@ -367,6 +370,59 @@ git commit -m "feat: nav resserrée sur l'achat — sortie d'Énergie du menu, p
 
 ---
 
+## Task 3b: Amendement du moteur — liens de recherche taggés + note visible (AMENDÉ 2026-08-01)
+
+**Files:**
+- Modify: `config/affiliate.ts` (ajouter `amazonSearchUrl`)
+- Modify: `components/mdx/Produit.tsx` (accepter `recherche` en alternative à `asin`)
+- Modify: `components/mdx/Comparatif.tsx` (accepter `recherche` par produit ; rendre la `note` visible ; échapper `</script>`)
+
+**Interfaces:**
+- Produces:
+  - `amazonSearchUrl(query: string, subid?: string): string` → `https://www.amazon.fr/s?k={query}&tag=rapide01-21`
+  - `<Produit>` accepte désormais `asin?` **OU** `recherche?` (au moins un requis) — le CTA utilise `amazonUrl(asin)` si `asin`, sinon `amazonSearchUrl(recherche)`.
+  - `ProduitCompare` gagne `recherche?: string` (même règle par ligne).
+
+- [ ] **Step 1: Ajouter amazonSearchUrl**
+
+Dans `config/affiliate.ts`, ajouter :
+```ts
+export function amazonSearchUrl(query: string, subid?: string): string {
+  const params = new URLSearchParams({ k: query, tag: AMAZON_TAG, language: 'fr_FR' });
+  if (subid) params.set('ascsubtag', subid);
+  return `${AMAZON_HOST}/s?${params.toString()}`;
+}
+```
+
+- [ ] **Step 2: Étendre `<Produit>`**
+
+`asin` devient optionnel, ajouter `recherche?: string`. Construire le lien :
+```tsx
+import { amazonUrl, amazonSearchUrl } from '@/config/affiliate';
+// ...
+const href = asin ? amazonUrl(asin, subid) : amazonSearchUrl(recherche ?? '', subid);
+```
+Le `href` du `<a>` utilise cette variable `href`.
+
+- [ ] **Step 3: Étendre `<Comparatif>` + note visible + échappement**
+
+- Ajouter `recherche?: string` à `ProduitCompare` ; par ligne : `href = p.asin ? amazonUrl(p.asin, p.subid) : amazonSearchUrl(p.recherche ?? '', p.subid)`.
+- **Rendre la note visible** : dans la cellule « Produit », si `p.note` est défini, afficher `★ {p.note}/5` (texte visible), afin que le schema Review reflète un contenu visible.
+- **Échapper le JSON-LD** : remplacer `JSON.stringify(jsonLd)` par `JSON.stringify(jsonLd).replace(/</g, '\\u003c')`.
+
+- [ ] **Step 4: Vérifier**
+
+Run: `npx tsc --noEmit` → propre. `npm run build` → réussi.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add config/affiliate.ts components/mdx/Produit.tsx components/mdx/Comparatif.tsx
+git commit -m "feat(affiliation): liens de recherche amazon.fr taggés + note Review visible + échappement JSON-LD"
+```
+
+---
+
 ## Task 4: Vague 1 — page `chargeur-samsung-galaxy-s25` (gabarit de référence)
 
 **Files:**
@@ -375,14 +431,14 @@ git commit -m "feat: nav resserrée sur l'achat — sortie d'Énergie du menu, p
 **Interfaces:**
 - Consumes: `<Produit>`, `<Comparatif>`, `<DisclosureAffiliation>` (Task 1).
 
-- [ ] **Step 1: Rechercher et vérifier les produits**
+- [ ] **Step 1: Choisir les produits recommandés (sans ASIN)**
 
 Intention : chargeur rapide compatible Samsung Galaxy S25 (25W/45W USB-C PD/PPS).
-Produits cibles à rechercher (`WebSearch` « chargeur Samsung 45W USB-C amazon.fr », puis `WebFetch` de chaque fiche `amazon.fr/dp/{ASIN}` pour confirmer ASIN + titre + dispo) :
-- le chargeur secteur **Samsung 45W** officiel (USB-C, Super Fast Charging 2.0) ;
-- une alternative **GaN 45W** bien notée (ex. UGREEN / Anker) ;
-- éventuellement un **câble USB-C 5A** compatible 45W.
-Noter les ASIN vérifiés + titres exacts + prix indicatif.
+Produits recommandés (modèles connus → chacun branché via `recherche=`) :
+- chargeur secteur **Samsung 45W** officiel (EP-T4510, Super Fast Charging 2.0) → `recherche="chargeur Samsung 45W EP-T4510 USB-C"` ;
+- alternative **GaN 45W** (ex. UGREEN Nexode / Anker) → `recherche="chargeur GaN 45W USB-C PD PPS"` ;
+- éventuellement **câble USB-C 5A 100W** → `recherche="cable USB-C 5A 100W charge rapide"`.
+Donner titre du modèle + prix indicatif (fourchette) + arguments honnêtes. Aucun ASIN.
 
 - [ ] **Step 2: Intégrer le gabarit page monétisée**
 
@@ -400,9 +456,9 @@ Run: `npx tsc --noEmit` → propre.
 Run: `npm run build` → réussi.
 Run: `npm run start` puis
 ```bash
-curl -s http://localhost:3000/chargeurs/chargeur-samsung-galaxy-s25 | grep -o 'amazon.fr/dp/[A-Z0-9]*?tag=rapide01-21' | sort -u
+curl -s http://localhost:3000/chargeurs/chargeur-samsung-galaxy-s25 | grep -o 'amazon.fr/s?[^"]*tag=rapide01-21' | sort -u
 ```
-Expected: les ASIN vérifiés apparaissent, tous taggés `rapide01-21`. Vérifier visuellement disclosure + 3 CTA.
+Expected: les liens de recherche taggés `rapide01-21` apparaissent. Vérifier visuellement disclosure + 3 CTA.
 
 - [ ] **Step 4: Commit**
 

@@ -43,9 +43,17 @@ existant et le faire croître. Approche retenue : **B — refonte affiliation co
 ## 3. Décisions actées
 
 - **Tag Amazon** : `rapide01-21` (marché : Amazon.fr).
-- **Sélection produits** : réalisée par Claude (recherche des best-sellers pertinents par page,
-  récupération et **vérification** des ASIN sur amazon.fr — pas d'ASIN inventé).
+- **Sélection produits** : réalisée par Claude — recommandations de modèles/types pertinents par page.
 - **Pages junk** : **redirection 301 vers la home** (`/`), fichiers MDX supprimés.
+
+### Amendement 2026-08-01 — liens de recherche taggés (pas d'ASIN)
+
+Les outils disponibles (WebSearch US-only, WebFetch bloqué sur amazon.fr, navigateur amazon.fr refusé)
+ne permettent **pas** de récupérer/vérifier des ASIN amazon.fr de façon fiable. Décision de Willy :
+les CTA pointent vers des **liens de recherche amazon.fr taggés** (ex.
+`https://www.amazon.fr/s?k=chargeur+Samsung+45W+USB-C&tag=rapide01-21`) — autorisé par le programme
+Amazon Associates, fonctionnel immédiatement. Le prop `asin` des composants est **conservé** pour un
+remplacement ultérieur par des liens produits précis (approche mixte). Aucun ASIN inventé n'est utilisé.
 
 ## 4. Architecture de monétisation
 
