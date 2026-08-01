@@ -17,12 +17,31 @@ schemaType: "Article"
 
 Une station solaire portable combine panneaux solaires, batterie et convertisseur pour alimenter vos appareils en autonomie.
 
+<DisclosureAffiliation />
+
 ### Composants essentiels
 
 - **Panneaux solaires** : Conversion lumière → électricité
 - **Batterie lithium** : Stockage de l'énergie
 - **Convertisseur** : Adaptation tension/courant
 - **Ports de sortie** : USB, 12V, 220V
+
+<Produit
+  titre="Station électrique portable généraliste avec panneau solaire (type Jackery/EcoFlow)"
+  recherche="générateur solaire portable batterie"
+  prix="~400-650 €"
+  points={[
+    "Bon compromis capacité/poids pour un usage camping et secours à domicile",
+    "Charge via secteur, voiture ou panneau solaire selon les modèles",
+    "Vérifiez la tension et le type de prises de sortie (USB-C PD, 220V, 12V) avant achat selon vos appareils",
+    "Capacité à confirmer sur la fiche produit : les besoins varient fortement selon l'usage"
+  ]}
+  badge="Notre choix"
+/>
+
+<Callout type="warning">
+Avant tout achat, vérifiez la compatibilité électrique de vos appareils : tension de sortie (220V, 12V, USB-C PD), puissance maximale supportée et type de connecteurs. Une station sous-dimensionnée ne pourra pas alimenter certains appareils gourmands (réfrigérateur, plaque de cuisson).
+</Callout>
 
 ## Puissance et autonomie
 
@@ -84,11 +103,43 @@ Idéales pour smartphones, tablettes et petits appareils électroniques.
 - Poids < 5 kg
 - Charge rapide USB-C
 
-<BuyButtons items={[
-  {label: "Goal Zero Yeti 200X", url: "https://amazon.fr", note: "Qualité professionnelle"},
-  {label: "EcoFlow River 2", url: "https://fnac.com", note: "Charge ultra-rapide"},
-  {label: "Jackery Explorer 240", url: "https://darty.com", note: "Rapport qualité/prix"}
+## Comparatif des meilleures stations solaires portables
+
+<Comparatif produits={[
+  {
+    titre: "Station électrique portable généraliste avec panneau solaire",
+    note: 4.5,
+    prix: "~400-650 €",
+    pour: ["Bon compromis capacité/poids", "Charge multi-source (secteur, voiture, solaire)", "Adaptée camping et secours domicile"],
+    contre: ["Vérifier la puissance des ports de sortie avant achat", "Temps de charge solaire long selon l'ensoleillement"],
+    recherche: "générateur solaire portable batterie",
+    badge: "Notre choix"
+  },
+  {
+    titre: "Station électrique portable 500W compacte camping",
+    note: 4,
+    prix: "~350-450 €",
+    pour: ["Légère et facile à transporter", "Format compact idéal week-end", "Prix plus accessible"],
+    contre: ["Puissance limitée pour les appareils gourmands (chauffage, plaque)", "Autonomie réduite pour usage prolongé"],
+    recherche: "station électrique portable 500W camping"
+  }
 ]} />
+
+Pour un usage plus intensif (maison, alimentation de secours prolongée), une capacité supérieure change la donne :
+
+<Produit
+  titre="Station énergie portable 1000W haute capacité"
+  recherche="station énergie portable 1000W"
+  prix="~700-1000 €"
+  points={[
+    "Capacité adaptée à un usage maison ou alimentation de secours prolongée",
+    "Peut alimenter plusieurs appareils simultanément (220V, USB, 12V)",
+    "Plus lourde et plus chère : à réserver à un usage sédentaire ou véhicule",
+    "Vérifiez la compatibilité de tension avec vos appareils avant l'achat"
+  ]}
+/>
+
+Pour approfondir le fonctionnement des panneaux et batteries, voir aussi notre guide [[solaire-portable-technologies]] et notre comparatif [[batterie-solaire-pliable]].
 
 ## FAQ
 

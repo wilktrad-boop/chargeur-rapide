@@ -15,6 +15,21 @@ schemaType: "Article"
 
 ## Mesurer l'efficacité énergétique
 
+<DisclosureAffiliation />
+
+<Produit
+  titre="Chargeur GaN USB-C compact et efficace"
+  recherche="chargeur GaN efficace USB-C"
+  prix="~20-35 €"
+  points={[
+    "Rendement supérieur aux chargeurs silicium classiques (moins de chaleur dissipée)",
+    "Format réduit, pratique à garder dans un sac ou une trousse",
+    "Vérifiez la puissance PD/PPS annoncée selon vos appareils",
+    "Le prix grimpe avec le nombre de ports et la puissance max"
+  ]}
+  badge="Notre choix"
+/>
+
 ### Indicateurs clés
 - **Rendement** : Énergie utile / Énergie consommée
 - **Facteur de puissance** : Puissance active / Puissance apparente
@@ -36,8 +51,10 @@ Un chargeur efficace affiche un rendement > 85 % et des pertes à vide < 0,1 W.
 
 ### Bonnes pratiques
 - Débrancher les chargeurs inutilisés
-- Utiliser des multiprises avec interrupteur
+- Utiliser des multiprises avec interrupteur, idéalement parafoudre
 - Privilégier les chargeurs certifiés 80 Plus
+
+Pour aller plus loin sur le choix de la puissance adaptée à vos appareils, voir notre guide [[charge-30w-65w-100w]]. Et pour comprendre pourquoi le GaN change la donne côté rendement, voir [[gan-vs-silicium]].
 
 ## Gestion des batteries
 
@@ -87,11 +104,36 @@ Un chargeur efficace affiche un rendement > 85 % et des pertes à vide < 0,1 W.
 - Historique des charges
 - Alertes de surconsommation
 
-<BuyButtons items={[
-  {label: "Wattmètre USB-C", url: "https://amazon.fr", note: "Mesure précise"},
-  {label: "Chargeur intelligent", url: "https://fnac.com", note: "Optimisation automatique"},
-  {label: "Multiprise connectée", url: "https://darty.com", note: "Contrôle à distance"}
+<Comparatif produits={[
+  {
+    titre: "Multiprise parafoudre avec suivi de consommation",
+    note: 4,
+    prix: "~20-40 €",
+    pour: ["Protège les appareils sensibles contre les surtensions", "Coupure des veilles inutiles", "Souvent plusieurs prises indépendantes"],
+    contre: ["Le suivi précis par prise n'existe que sur les modèles connectés (plus chers)", "Encombrement au sol selon le modèle"],
+    recherche: "multiprise parafoudre"
+  },
+  {
+    titre: "Prise connectée avec mesure de consommation",
+    note: 4,
+    prix: "~15-25 €",
+    pour: ["Affiche la consommation réelle en W et kWh via une app", "Permet de repérer les appareils énergivores", "Programmation à distance possible"],
+    contre: ["Nécessite Wi-Fi et une app tierce", "Précision variable selon les modèles d'entrée de gamme"],
+    recherche: "prise connectée mesure consommation",
+    badge: "Utile pour mesurer"
+  }
 ]} />
+
+<Produit
+  titre="Wattmètre USB-C pour mesurer précisément vos chargeurs"
+  recherche="wattmètre USB-C"
+  prix="~12-25 €"
+  points={[
+    "Affiche tension, intensité et puissance réelle en temps réel",
+    "Utile pour vérifier qu'un chargeur tient ses promesses de watts",
+    "Format compact, se glisse entre le chargeur et le câble"
+  ]}
+/>
 
 ## FAQ
 

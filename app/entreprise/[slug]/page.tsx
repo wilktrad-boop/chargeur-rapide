@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { StickyCTA } from '@/components/StickyCTA';
+import { AMAZON_FALLBACK_URL } from '@/config/affiliate';
 
 
 type Params = { params: { slug: string } };
@@ -150,7 +151,7 @@ export default async function ArticlePage({ params }: Params) {
       <Footer />
       <StickyCTA
         label={post.cta?.label ?? 'Voir les prix sur Amazon'}
-        url={post.cta?.url ?? 'https://www.amazon.fr/?tag=willypaul3407-21'}
+        url={post.cta?.url ?? AMAZON_FALLBACK_URL}
         note={post.cta?.note}
       />
     </>

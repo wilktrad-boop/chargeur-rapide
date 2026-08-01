@@ -32,7 +32,11 @@ const nextConfig = {
       '/entreprise/nexterprise-fr',
       '/entreprise/zone-business-fr',
     ];
-    return junk.map((source) => ({ source, destination: '/', permanent: true }));
+    return [
+      ...junk.map((source) => ({ source, destination: '/', permanent: true })),
+      // Doublon de slug résolu : la page mobilite/ est canonique
+      { source: '/guides/borne-recharge-domicile', destination: '/mobilite/borne-recharge-domicile', permanent: true },
+    ];
   },
 };
 

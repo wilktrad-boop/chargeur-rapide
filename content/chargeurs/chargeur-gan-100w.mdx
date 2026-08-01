@@ -15,6 +15,20 @@ schemaType: "Article"
 
 ## Qu'est-ce que le GaN ?
 
+<DisclosureAffiliation />
+
+<Produit
+  titre="Chargeur GaN 100 W USB-C multiport"
+  recherche="chargeur GaN 100W USB-C multiport"
+  prix="~55-85 €"
+  points={[
+    "100 W répartis entre plusieurs ports : charge un laptop et un smartphone en même temps",
+    "Format compact grâce au GaN, malgré la puissance",
+    "Nécessite un câble USB-C certifié 100 W pour exploiter la pleine puissance"
+  ]}
+  badge="Notre choix"
+/>
+
 Le nitrure de gallium (GaN) permet des chargeurs plus compacts et efficaces que le silicium traditionnel.
 
 ### Avantages du GaN
@@ -55,10 +69,38 @@ Le nitrure de gallium (GaN) permet des chargeurs plus compacts et efficaces que 
 Choisissez un modèle avec certification USB-IF et garantie constructeur de 2 ans minimum.
 </Callout>
 
-<BuyButtons items={[
-  {label: "Amazon", url: "https://amazon.fr", note: "Livraison rapide"},
-  {label: "Fnac", url: "https://fnac.com", note: "Retrait magasin"}
+<Comparatif produits={[
+  {
+    titre: "Chargeur GaN 100 W USB-C multiport",
+    note: 4.5,
+    prix: "~55-85 €",
+    pour: ["Charge simultanée laptop + smartphone", "Compact malgré la puissance", "Bonne dissipation thermique"],
+    contre: ["Nécessite un câble 100 W certifié", "Prix plus élevé qu'un chargeur mono-port"],
+    recherche: "chargeur GaN 100W USB-C multiport",
+    badge: "Notre choix"
+  },
+  {
+    titre: "Chargeur GaN 100 W 4 ports",
+    note: 4,
+    prix: "~60-90 €",
+    pour: ["4 ports pour charger toute une famille d'appareils", "Puissance répartie intelligemment selon les besoins", "Remplace plusieurs adaptateurs de bureau"],
+    contre: ["La puissance par port diminue si les 4 ports sont utilisés simultanément", "Plus volumineux qu'un modèle 1-2 ports"],
+    recherche: "chargeur GaN 100W 4 ports"
+  }
 ]} />
+
+Notre guide [[chargeur-gan-guide]] détaille toutes les puissances GaN disponibles si 100 W est trop (ou pas assez) pour votre usage. Pour un setup fixe de bureau avec plusieurs appareils, voir aussi [[chargeur-usb-c-ordinateur-portable]].
+
+<Produit
+  titre="Chargeur GaN 100 W USB-C PD"
+  recherche="chargeur GaN 100W USB-C PD"
+  prix="~50-80 €"
+  points={[
+    "Support USB PD 3.1 et PPS pour la compatibilité la plus large",
+    "Idéal en chargeur unique de secours ou de voyage",
+    "Vérifiez la certification USB-IF avant achat"
+  ]}
+/>
 
 ## FAQ
 
