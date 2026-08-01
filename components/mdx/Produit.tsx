@@ -1,7 +1,8 @@
-import { amazonUrl } from '@/config/affiliate';
+import { amazonUrl, amazonSearchUrl } from '@/config/affiliate';
 
 interface ProduitProps {
-  asin: string;
+  asin?: string;
+  recherche?: string;
   titre: string;
   prix?: string;
   points?: string[];
@@ -9,7 +10,8 @@ interface ProduitProps {
   subid?: string;
 }
 
-export function Produit({ asin, titre, prix, points = [], badge, subid }: ProduitProps) {
+export function Produit({ asin, recherche, titre, prix, points = [], badge, subid }: ProduitProps) {
+  const href = asin ? amazonUrl(asin, subid) : amazonSearchUrl(recherche ?? '', subid);
   return (
     <div className="not-prose my-6 rounded-2xl border border-border p-5">
       {badge && (
@@ -31,7 +33,7 @@ export function Produit({ asin, titre, prix, points = [], badge, subid }: Produi
         </ul>
       )}
       <a
-        href={amazonUrl(asin, subid)}
+        href={href}
         target="_blank"
         rel="sponsored nofollow noopener noreferrer"
         className="mt-4 inline-block rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primaryHover"
